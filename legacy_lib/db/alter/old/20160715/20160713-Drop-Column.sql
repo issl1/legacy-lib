@@ -1,0 +1,3 @@
+﻿ALTER TABLE tu_campaign_asset_model DROP column cam_ass_mod_am_default_finance_amount;
+ALTER TABLE tu_campaign_asset_model DROP column cam_ass_mod_am_min_finance_amount;
+ALTER TABLE tu_campaign DROP column cam_offset_finance_amount;

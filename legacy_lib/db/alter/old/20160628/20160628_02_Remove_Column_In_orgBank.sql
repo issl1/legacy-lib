@@ -1,0 +1,1 @@
+﻿ALTER TABLE tu_org_bank_account DROP COLUMN ban_external_id, DROP COLUMN ban_acc_holder_id, DROP COLUMN externalid;

@@ -1,0 +1,44 @@
+﻿alter table tu_organization rename column typ_com_id to typ_org_id;
+alter table td_company rename column typ_com_id to typ_org_id;
+alter table tu_dealer rename column typ_com_id to typ_org_id;
+
+
+-- run 01-01-ref-data-core.sql, 01-02-ref-data-efinance.sql
+	-- Update RefTable
+		(59, 'com.nokor.common.app.hr.model.eref.EOrgLevel', 'Organization Level', 'Organization Level', 						'organizationlevels', 		1, true, 		false, true,  false,		true, true, false, 	 	1, now(), 'admin', now(), 'admin'),
+
+	-- Add into RefTable
+		(57, 'com.nokor.common.app.hr.model.eref.ETypeOrganization', 'Organization types', 'Organization types', 				'organizationtypes', 		1, true, 		false, true,  false,  		true,  true,  false, 	1, now(), 'admin', now(), 'admin'),
+		(58, 'com.nokor.common.app.hr.model.eref.ESubTypeOrganization', 'Organization subtypes', 'Organization subtypes', 		'organizationsubtypes', 	1, true, 		false, true,  false,  		true,  true,  false, 	1, now(), 'admin', now(), 'admin'),
+
+	-- Remove from RefTable
+    (233, 'com.nokor.efinance.core.organization.model.ETypeOutsource', 'ETypeOutsource', 'ETypeOutsource',										                    'Outsourcetypes', 	    1, true, 		true,  	true,  false, 		true, true, false ,	 	1, now(), 'admin', now(), 'admin'),
+	
+	-- Customized RefTable fields
+		-- ESubTypeOrganization	
+		update ts_ref_table	set ref_tab_field_name1 = 'typeOrganization', 		ref_tab_field1_cus_id = '8' where ref_tab_id = 58;	
+		-- EOrgLevel	
+		update ts_ref_table	set ref_tab_field_name1 = 'level', 					ref_tab_field1_cus_id = '4' where ref_tab_id = 59;	
+
+		
+	-- RefData
+		-- ETypeOrganization	
+		(57, 1, 'MAIN', 'Group Lease', 'Group Lease',						null, null, 1, 1, now(), 'admin', now(), 'admin'),
+		(57, 2, 'INSURANCE', 'Insurance companies', 'Insurance companies',	null, null, 1, 1, now(), 'admin', now(), 'admin'),
+		(57, 3, 'AGENT', 'Agents companies', 'Agents companies',			null, null, 1, 1, now(), 'admin', now(), 'admin'),
+		(57, 4, 'LOCATION', 'Locations', 'Locations',						null, null, 1, 1, now(), 'admin', now(), 'admin'),
+		
+		-- ESubTypeOrganization	
+		(58, 1, 'REGI_AGENT', 'Registration agents', 'Registration agents',		3, null, 1, 1, now(), 'admin', now(), 'admin'),
+		(58, 2, 'COLL_AGENT', 'Collection agents', 'Collection agents',			3, null, 1, 1, now(), 'admin', now(), 'admin'),
+		(58, 3, 'PRIN_AGENT', 'Printing agents', 'Printing agents',				3, null, 1, 1, now(), 'admin', now(), 'admin'),
+		(58, 4, 'COLL_LOCATION', 'Warehouses', 'Warehouses',					4, null, 1, 1, now(), 'admin', now(), 'admin'),
+		(58, 5, 'AUCT_LOCATION', 'Auction locations', 'Auction locations',		4, null, 1, 1, now(), 'admin', now(), 'admin'),
+
+		-- EOrgLevel
+		(59, 1, 'HOLDING', 'Holding', 'Holding',							1, null, 1, 1, now(), 'admin', now(), 'admin'),
+		(59, 2, 'SUBSIDIARY', 'Subsidiary', 'Subsidiary',					2, null, 1, 1, now(), 'admin', now(), 'admin'),
+		(59, 3, 'HEAD_OFFICE', 'Head Office', 'Head Office',				3, null, 1, 1, now(), 'admin', now(), 'admin'),
+		(59, 4, 'BRANCH', 'Branch', 'Branch',								3, null, 1, 1, now(), 'admin', now(), 'admin'),
+		(59, 5, 'DEPARTMENT', 'Department', 'Department',					4, null, 1, 1, now(), 'admin', now(), 'admin'),
+		(59, 6, 'OFFICE', 'Office', 'Office',								5, null, 1, 1, now(), 'admin', now(), 'admin'),

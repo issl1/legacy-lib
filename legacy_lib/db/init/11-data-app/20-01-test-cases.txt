@@ -1,0 +1,10 @@
+﻿-- update td_individual
+-- set 
+-- 	per_lastname = 'เงารังษี',
+-- 	per_firstname = 'พีรณัฐ'
+-- where ind_id in (
+-- 		select i.ind_id
+-- 		from td_contract c, td_applicant a, td_individual i
+-- 		where c.app_id = a.app_id
+-- 		and a.ind_id = i.ind_id
+-- 		and c.con_va_reference = '0115000001')

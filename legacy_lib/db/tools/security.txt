@@ -1,0 +1,11 @@
+init profile
+
+	delete from tu_sec_control_privilege;
+	ALTER SEQUENCE tu_sec_control_privilege_sec_cop_id_seq RESTART;
+
+	delete from tu_sec_control_profile_privilege;
+	ALTER SEQUENCE tu_sec_control_profile_privilege_sec_cpp_id_seq RESTART;
+
+	delete from ts_sec_control;
+	ALTER SEQUENCE ts_sec_control_sec_ctl_id_seq RESTART;
+

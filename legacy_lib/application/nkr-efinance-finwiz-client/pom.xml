@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.nokor.efinance</groupId>
+	<artifactId>nkr-efinance-finwiz-client</artifactId>
+	<packaging>jar</packaging>
+	<name>Nokor-eFinance Bridge with FinWiz</name>
+	<description>Nokor-eFinance Bridge with FinWiz</description>
+
+	<parent>
+		<groupId>com.nokor.efinance</groupId>
+		<artifactId>nkr-efinance-parent</artifactId>
+	  <version>th-2016.r1.1.02-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+    
+	<properties>
+		<FinWizShare.version>0.1-SNAPSHOT</FinWizShare.version>
+		<FinWizDomainShare.version>1.0.5</FinWizDomainShare.version>
+	</properties>
+	
+	<scm>
+		<connection>scm:svn:https://svn.nokor-solutions.com:8081/svn/nkr-efinance-th/trunk/src/nkr-efinance-finwiz-client</connection>
+		<developerConnection>scm:svn:https://svn.nokor-solutions.com:8081/svn/nkr-efinance-th/trunk/src/nkr-efinance-finwiz-client</developerConnection>
+		<url>scm:svn:https://svn.nokor-solutions.com:8081/svn/nkr-efinance-th/trunk/src/nkr-efinance-finwiz-client</url>
+		<tag>HEAD</tag>
+    </scm>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.nokor.frmk</groupId>
+			<artifactId>nkr-frmk-services-seuksa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.nokor.frmk</groupId>
+			<artifactId>nkr-frmk-services</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.nokor.frmk</groupId>
+			<artifactId>nkr-frmk-messaging</artifactId>
+		</dependency>		
+		
+		<dependency>
+			<groupId>com.nokor.ersys</groupId>
+			<artifactId>nkr-ersys-core-common</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.nokor.efinance</groupId>
+			<artifactId>nkr-efinance-share</artifactId>
+		</dependency>
+		
+		<!-- finwiz dependencies -->
+		<dependency>
+			<groupId>com.gl.finwiz.share</groupId>
+			<artifactId>domain</artifactId>
+			<version>${FinWizDomainShare.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+		<outputDirectory>target/classes</outputDirectory>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources/spring</directory>
+			</resource>
+		</resources>	
+		<plugins>
+			<!-- <plugin>
+			   <groupId>org.apache.maven.plugins</groupId>
+			   <artifactId>maven-install-plugin</artifactId>
+			   <version>2.5.1</version>
+
+				<executions>
+					<execution>
+					    <id>install-lib-FinWizShare</id>
+				        <goals>
+				            <goal>install-file</goal>
+				        </goals>
+				        <phase>initialize</phase>
+
+				        <configuration>
+							<groupId>com.gl.finwiz</groupId>
+							<artifactId>FinWizShare</artifactId>
+							<version>${FinWizShare.version}</version>
+					      	<packaging>jar</packaging>
+					      	<file>${basedir}/lib/FinWizShare-${FinWizShare.version}.jar</file>
+					      	<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+					<execution>
+					    <id>install-lib-FinWizDomainShare</id>
+				        <goals>
+				            <goal>install-file</goal>
+				        </goals>
+				        <phase>initialize</phase>
+
+				        <configuration>
+							<groupId>com.gl.finwiz</groupId>
+							<artifactId>FinWizDomainShare</artifactId>
+							<version>${FinWizDomainShare.version}</version>
+					      	<packaging>jar</packaging>
+					      	<file>${basedir}/lib/domain-${FinWizDomainShare.version}.jar</file>
+					      	<generatePom>true</generatePom>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin> -->
+			<plugin>
+	        	<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				 <configuration>
+					 <source>${jdk.version}</source>
+					 <target>${jdk.version}</target>
+					 <encoding>UTF-8</encoding>
+        		</configuration>
+			</plugin>
+			<plugin>
+	        	<groupId>org.apache.maven.plugins</groupId>
+	        	<artifactId>maven-source-plugin</artifactId>
+	        	<version>2.2.1</version>
+	        	<executions>
+              		<execution>
+                		<id>attach-sources</id>
+                		<goals>
+                  			<goal>jar</goal>
+                		</goals>
+              		</execution>
+            	</executions>
+	      	</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.16</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

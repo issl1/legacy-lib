@@ -1,0 +1,1 @@
+﻿ALTER TABLE td_contract_flag DROP COLUMN pol_sta_id;

@@ -1,0 +1,2 @@
+﻿ALTER TABLE tu_asset_model
+DROP COLUMN ass_mod_standard_finance_amount

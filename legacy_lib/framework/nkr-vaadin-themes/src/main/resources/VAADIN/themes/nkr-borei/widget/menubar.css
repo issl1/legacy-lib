@@ -1,0 +1,107 @@
+.v-menubar-layout, 
+.v-menubar, 
+.v-menubar-with-arrow {
+    background: none repeat scroll 0 0 #3B5998;
+    padding: 0px;
+    height: 35px;
+}
+
+.v-menubar, .v-menubar-with-arrow {
+    height: inherit;
+    padding: inherit;
+    width: 100%;
+    
+    color: #FFFFFF;
+    font-size: 9pt;
+    text-shadow: inherit;
+}
+
+.v-menubar-popup
+.popupContent
+.v-menubar-submenu
+.v-menubar-menuitem {
+	min-width: 141px;
+}
+
+.v-menubar 
+.v-menubar-menuitem {
+    padding: 6px 8px;
+    cursor: pointer;
+    border-right: 1px solid rgba(251, 251, 251, 0.2);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 10px 15px;
+}
+
+.v-menubar
+.v-menubar-menuitem-white 
+.v-icon {
+    color: #FFFFFF;
+}
+
+.v-menubar 
+.v-menubar-menuitem:last-child {
+    border-right: 0px solid;
+}
+
+.v-menubar .v-menubar-menuitem-selected, 
+.v-menubar .v-menubar-menuitem:hover {
+    background: none repeat scroll 0 0 #4f75c5;
+}
+
+.v-menubar-submenu 
+.v-menubar-menuitem {
+    padding: 5px 26px 5px 10px;
+}
+
+.v-menubar-with-arrow
+.v-menubar-menuitem
+.v-menubar-submenu-indicator + .v-menubar-menuitem-caption:after, 
+.v-overlay-container 
+.v-menubar-with-arrow
+.v-menubar-menuitem
+.v-menubar-submenu-indicator + .v-menubar-menuitem-caption:after {
+    content: "";
+    font-family: FontAwesome;
+    font-size: 0.7em;
+    margin: 0 -0.2em 0 0.5em;
+    opacity: 0.8;
+    vertical-align: 0.15em;
+}
+
+.v-caption-menubar-search {
+    padding: 7px;
+    position: absolute;
+}
+
+.v-textfield-menubar-search {
+	background: none repeat scroll 0 0 #F5F5F5 !important;
+    padding-left: 22px !important;
+    width: 200px !important;
+	height: 28px !important;
+}
+.v-menubar .v-menubar-menuitem-caption .v-icon {
+	color: #fff;
+}
+.v-slot.v-slot-menubar-search {
+	margin-left: -5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.v-menubar .v-menubar-menuitem-selected, .v-menubar-submenu .v-menubar-menuitem-selected {
+	background: none repeat scroll 0 0 #4f75c5;
+}
+.v-menubar-submenu .v-menubar-menuitem .v-icon,
+.v-caption-menubar-search .v-icon {
+	color: #555;
+}
+.v-menubar-submenu .v-menubar-menuitem-selected .v-icon{
+	color: #fff;
+}
+.v-menubar-submenu .v-menubar-menuitem {
+	line-height: 20px;
+}
+.v-menubar-submenu .v-menubar-menuitem *, .v-menubar-submenu .v-menubar-menuitem-caption * {
+	font-size: 12px;
+}

@@ -1,0 +1,93 @@
+# EFinance
+
+=========================================================================
+==                        EFINANCE Release file                        ==
+=========================================================================
+-------------------------------------------------------------------------
+- Date: 30/09/2015
+- Version		: th-2015.r1.1.01-SNAPSHOT-b3-2015-09-30_12-32
+- eFinance-app	: http://172.255.152.138:8080/efinance-app/
+- eFinance-ra	: http://172.255.152.138:8080/efinance-ra/
+-------------------------------------------------------------------------
+- Organizations
+	http://172.255.152.138:8080/efinance-ra/messaging/configs/organizations
+- Insurance companies
+	http://172.255.152.138:8080/efinance-ra/messaging/configs/insurance/companies
+- Insurance campaigns
+	http://172.255.152.138:8080/efinance-ra/messaging/configs/insurance/campaigns
+- Asset Brands
+	http://172.255.152.138:8080/efinance-ra/messaging/configs/assetbrands
+- Asset Series
+	http://172.255.152.138:8080/efinance-ra/messaging/configs/assetranges
+
+
+
+-------------------------------------------------------------------------
+- Date: 28/09/2015
+- Version		: 2015.r1.1.01-SNAPSHOT-bXXXXXXXXXXXX
+- eFinance-app	: http://172.255.152.138:8080/efinance-app/
+- eFinance-ra	: http://172.255.152.138:8080/efinance-ra/
+-------------------------------------------------------------------------
+- Organizations
+	http://172.255.152.138:8080/efinance-ra/messaging/configs/organizations
+- Insurance companies
+	http://172.255.152.138:8080/efinance-ra/messaging/configs/insurance/companies
+- Insurance campaigns
+	http://172.255.152.138:8080/efinance-ra/messaging/configs/insurance/campaigns
+- Asset Brands
+	http://172.255.152.138:8080/efinance-ra/messaging/configs/assetbrands
+- Asset Series
+	http://172.255.152.138:8080/efinance-ra/messaging/configs/assetranges
+
+
+
+
+-------------------------------------------------------------------------
+- Date: 21/09/2015
+- Version		: 2015.r1.1.01-SNAPSHOT-b1-2015-09-21_11-04
+- eFinance-app	: http://172.255.152.138:8080/efinance-app/
+- eFinance-ra	: http://172.255.152.138:8080/efinance-ra/
+-------------------------------------------------------------------------
+- Administrator	: admin / admin@EFIN
+- CM
+   cm_staff / staff
+   cm_leader / leader
+- WS RA (Configurations)
+	. Params - see file "WS - Params.txt"
+		http://172.255.152.138:8080/efinance-ra/messaging/configs/params/{table}
+	. Campaigns - see file "WS - Campaigns.txt"
+		http://172.255.152.138:8080/efinance-ra/messaging/configs/campaigns
+	. Products lines - see file "WS - ProductLines.txt"
+		http://172.255.152.138:8080/efinance-ra/messaging/configs/productlines
+	. Financial products - see file "WS - FinancialProducts.txt"
+		http://172.255.152.138:8080/efinance-ra/messaging/configs/financialproducts
+	. Asset models - see file "WS - AssetModels.txt"
+		http://172.255.152.138:8080/efinance-ra/messaging/configs/assetmodels
+	. Dealers - see file "WS - VATs.txt"
+		http://172.255.152.138:8080/efinance-ra/messaging/configs/dealers
+	. VATs - see file "WS - Dealers.txt"
+		http://172.255.152.138:8080/efinance-ra/messaging/configs/dealers
+- WS App CM, Collection
+	. Contracts - see file "WS - Contracts.txt"
+		http://172.255.152.138:8080/efinance-app/messaging/contracts
+		http://172.255.152.138:8080/efinance-app/messaging/contracts/search
+		http://172.255.152.138:8080/efinance-app/messaging/contracts/activate
+	. Contracts After Sales Events - see file "WS - Contracts - After Sales Event.txt"
+		http://172.255.152.138:8080/efinance-app/messaging/contracts/earlysettlement
+		http://172.255.152.138:8080/efinance-app/messaging/contracts/repossession
+		http://172.255.152.138:8080/efinance-app/messaging/contracts/terminate/{reference}
+		http://172.255.152.138:8080/efinance-app/messaging/contracts/close/{reference}
+- Shared libs (jars)
+	Main DTOs
+		. RefDataDTO
+		. ContractDTO
+		. CampaignDTO
+		. ProductLineDTO
+		. FinProductDTO
+		. DealerDTO
+		. AssetModelDTO
+		. EarlySettlementDTO
+		. RepossessionDTO
+
+
+

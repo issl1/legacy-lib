@@ -1,0 +1,50 @@
+.v-wizardprogressbar {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.v-wizardprogressbar .bar-captions {
+	overflow: auto;
+	height: 100%;
+}
+
+.v-wizardprogressbar .bar-captions .step {
+	overflow: auto;
+	height: 100%;
+}
+
+.v-wizardprogressbar .bar-wrapper {
+	clear: left;
+	float: left;
+	width: 100%;
+	height: 10px;
+	margin-bottom: 3px;
+	border: none;
+}
+.v-wizardprogressbar .bar {
+	height: 100%;
+	background-color: #00b3ef; 
+	background: -moz-linear-gradient(center top , #20D4FF, #009CD0) repeat-x scroll left top transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#20d4ff), to(#009cd0)) top left repeat-x;
+	-moz-transition: width 0.5s ease-out 0s;
+	-webkit-transition: width 0.5s ease-out 0s;
+}
+
+/* Step captions */
+.v-wizardprogressbar .bar-captions .step .step-caption {
+	color: #bfbfbf;
+	font-size: 15px;
+	font-weight: 600;
+	white-space: nowrap;
+	padding-bottom: 2px;
+	text-align: center;
+	-moz-transition: all 0.25s ease-in-out;
+	-webkit-transition: all 0.25s ease-in-out; 
+}
+.v-wizardprogressbar .bar-captions .completed .step-caption,
+.v-wizardprogressbar .bar-captions .current .step-caption {
+	color: #000;
+}
+

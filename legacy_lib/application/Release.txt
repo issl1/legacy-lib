@@ -1,0 +1,353 @@
+﻿=========================================================================
+==                        EFINANCE Release file                        ==
+=========================================================================
+-------------------------------------------------------------------------
+- Date: 03/08/2016
+-------------------------------------------------------------------------
+Impact DTO : NO
+- FIN-1665: Payment (batch or cashier) bug dealership
+- FIN-1692: Menu Contracts > Search > Open Contract : View CM
+- FIN-1693: Bug Contract Page when Call Center open
+-------------------------------------------------------------------------
+- Date: 02/08/2016
+-------------------------------------------------------------------------
+Impact DTO : YES
+- FIN-1642: Duplication Screens AR
+- FIN-1525: Parameter : call center(welcome call) create UI for config result code of welcome call.
+-------------------------------------------------------------------------
+- Date: 01/08/2016
+-------------------------------------------------------------------------
+Impact DTO : NO
+- FIN-1235: Transfer contract เมื่อ Approve app จาก LOS มายัง CM เลขที่ Application ID ต้องส่งเป็นเลขที่ App ใหม่มา เนื่องจากตอนนนี้ระบบส่งเลขที่ app เดิมมา ซึ่งไม่ถูกต้อง
+- FIN-1590: Search history tab. to black list Guarantor system show data Deficient
+- FIN-1130: Taxonomy & Example Notes
+- FIN-1587: CM Invoice Amount (Inc)
+-------------------------------------------------------------------------
+- Date: 29/07/2016
+-------------------------------------------------------------------------
+Impact DTO : YES
+- FIN-622: Field Alert --> Manual Key In Possible
+- FIN-1555: Add employment statuses field into EmploymentDTO and show it on job 
+
+-------------------------------------------------------------------------
+- Date: 28/07/2016
+-------------------------------------------------------------------------
+Impact DTO : YES
+- FIN-1561: LOS : phone in dealer service is empty.@staging 26/7/2016 14.39 PM.
+- FIN-1436: Overdues Formula.
+- FIN-1607: Add standard amount in campaign service
+- FIN-1199: Cm Accounting Tab
+-------------------------------------------------------------------------
+- Date: 27/07/2016
+-------------------------------------------------------------------------
+Impact DTO : YES
+- FIN-563: system should be set status of that phone number to see whether it is active or not
+- FIN-1511: Mkt Campaign - Asset (Finance Amount + Offset + Std Finance Amount)
+
+-------------------------------------------------------------------------
+- Date: 26/07/2016
+-------------------------------------------------------------------------
+Impact DTO : NO
+- FIN-1501: CM : Tab loan when select prepaid term <> 0 and save after that exit screen and come tab loan again field prepaid term always display 0. @ staging
+- FIN-1172: Collection ASSIGNED tab (Supervisor) Filter
+- FIN-1435: Cm - Tab Summary
+-------------------------------------------------------------------------
+- Date: 25/07/2016
+-------------------------------------------------------------------------
+Impact DTO : YES
+- FIN-1473: create web service for payment detail of insurance companies
+- FIN-1499: API for search Contract do not return any result
+- FIN-1500: Landline send SMS (regression)
+- FIN-1489: Button SAVE Setup (Loan) tab
+
+-------------------------------------------------------------------------
+- Date: 22/07/2016
+-------------------------------------------------------------------------
+Impact DTO : YES
+- FIN-1450: Due tab - Loan sub tab Bug
+- FIN-1444: Contract menu, Field Prepaid Term, Un-mandatory field.
+- FIN-1439: Contract Menu, no_building incorrect
+- FIN-1447: Collection : tab ISR & Legal users want to display Thai description of field province/district/sub district.
+- FIN-1482: Send campaign that set validForAllDealers is true in campaign service 
+- FIN-1483: Add brand and model in campaign service
+- FIN-1083: Bugs in Lock-Split
+
+-------------------------------------------------------------------------
+- Date: 21/07/2016
+-------------------------------------------------------------------------
+- FIN-1239: Payment Codes / Receipt Code / COA
+- FIN-873: Field--> it has to be able to print contract information in order to follow up customer in field
+-------------------------------------------------------------------------
+- Date: 20/07/2016
+-------------------------------------------------------------------------
+- FIN-1156: CM-Insurance Display insurance information in Contract
+-------------------------------------------------------------------------
+- Date: 19/07/2016
+-------------------------------------------------------------------------
+- FIN-1103: Asset parameter: Add CC
+- FIN-1432: CM- No VAT in Schedule Installment
+- FIN-1288: Bug Insurance Lost Configuration
+- FIN-1399: In the system display installment wrong e.g. installment = 2,075.00 but system display 2,073.98 please re-check
+- FIN-1175: Configure year coverage for premium and sum categories in Insurance parameter
+- FIN-1264: Delinquencies APD and & Amount doesn't work
+- FIN-1159: CM Activation Contract Bug
+
+-------------------------------------------------------------------------
+- Date: 18/07/2016
+-------------------------------------------------------------------------
+- FIN-1311: CM-Loan detail--> system display information of asset incorrect.
+- FIN-1338: Parameter : value of term it not should be more than 3 digits
+- FIN-1362: Collection : tab ISR field police station it's should be filter by province.
+- FIN-1393: Tab loan it not should be to edit Dealership ID, Marketing ID, Brand, Model, Series. (Now system can to edit these fields and then save error.)
+- FIN-1395: CM : when activated contract but contract status = pending. Please re-check.
+
+-------------------------------------------------------------------------
+- Date: 15/07/2016
+-------------------------------------------------------------------------
+- FIN-1306: Los- Tab loan display offset amount incorrect.
+- FIN-1331: Find postal code from service instead of manually input
+- FIN-1343: Parameter Series: – In case the same model system not should be duplicate series name.
+- FIN-1378: Parameter : marketing campaign - tab asset system cannot display name of series.
+- FIN-1261: Promise Status Bug
+- FIN-1363: COmpensation Repossession Wrong
+
+-------------------------------------------------------------------------
+- Date: 14/07/2016
+-------------------------------------------------------------------------
+- FIN-1313: Add value "Unknown" in dropdown Color
+- FIN-1262: Parameter Dealer Owner - Please verified wording for alert user when save (wording is "save.dealer.employee.before.save.contact".)
+- FIN-1257: Filed different LOS:CM 1.Borrower :Field Middle Name 2.Spouse :Field Spouse title, Spouse prefix
+- FIN-1340: Parameter : description of term at search page have 2 fields descriptions but inside for create have only one.
+- FIN-1331: Find postal code from service instead of manually input
+- FIN-1361: Activate transferred contract
+- FIN-1251: Error @save Address of Create New Dealer
+- FIN-1263: The save address button error
+- FIN-1250: Integrate registration book on asset tab
+- FIN-1341: Parameter credit control: description (En) not should be save if user press backspace key only
+
+-------------------------------------------------------------------------
+- Date: 13/07/2016
+-------------------------------------------------------------------------
+- FIN-1252: Parameter credit control - field months should be fix only 2 digits and value cannot less than 0 and cannot more than 12
+- FIN-1298: Fix can't show the right offset on loan form
+- FIN-1321: Loan Tab, Filed Application don't display
+- FIN-1285: Insurance Coverage Duration
+- FIN-1322: Validations menu error sent to Accounting (in staging)
+
+-------------------------------------------------------------------------
+- Date: 12/07/2016
+-------------------------------------------------------------------------
+- FIN-927: Collection Menu
+- FIN-1228: Installment Calculation is wrong
+- FIN-1202: User-General- please un-check field title for mandatory because some customer to have title name but not at all.
+- FIN-1219: Contract menu, Loan VAT Amount incorrect
+- FIN-1232: Tab user-General - field customer id not should be able to edit.
+- FIN-1233: Penalty Locksplit
+- FIN-1224: Payment-Pending payment-Lock splits --> When double click record of lock split but system error. 
+- FIN-1258: Loan Summary - Number of reference wrong
+- FIN-1259: Bug 1st Due Date
+- FIN-1167: Scan contract menu:After scanning and receiving the application, so when scanning again, the system has to be unable to scan again
+- FIN-1260: Down Payment Formula = Wrong
+- FIN-1265: Parameter Dealer – When search information system should be search function “like” not search function “equal” only.
+
+-------------------------------------------------------------------------
+- Date: 11/07/2016
+-------------------------------------------------------------------------
+- FIN-961: CM Contract Page - Tab Communication
+- FIN-1018: svr 245- Payments-Payment Cashier/Cheque When enter at field Amount or press view data of contract ID system error
+- FIN-1200: Contract menu,Credit History Tab,App ID display incorrectly
+- FIN-1223: Dealer-Detail --> When save dealer information at detail tab but field licence no. disappear
+- FIN-1152: CM - Tab Loan
+- FIN-1159: CM Activation Contract Bug
+- FIN-1160: Contract Menu : Contract Date, Default system date
+- FIN-1180: Contract Menu Case Force & Hold payment,The system don’t activate
+- FIN-1183: Search Contract Function
+- FIN-1187: Field/Inside/OA Collection Printing Documents
+
+-------------------------------------------------------------------------
+- Date: 07/07/2016
+-------------------------------------------------------------------------
+- FIN-1177: Can transfer contract more than 1 time
+- FIN-1178: Could not open page Summaries
+- FIN-1181: Error activation contract 0116000198 on server development
+- FIN-1022 : Screen of contract activation --> Loan field to issue invoice : add 2 fields 1. field 1 : VAT amount 2. field 2 : Invoice amount - VAT
+- FIN-1151 : Create Job to calculate the redemption expired period
+
+-------------------------------------------------------------------------
+- Date: 06/07/2016
+-------------------------------------------------------------------------
+- Pre-approve and aprrove the PaymentOrderBatch in CM.
+- Issue with Transfer Contract Webservice
+- FIN-1150 - Asset service always returns one asset with no query parameters
+- FIN-1147 - 1.User tab error 2. Activate button error
+- FIN-1085 - when press tab transaction for see information of payment history
+
+
+-------------------------------------------------------------------------
+- Date: 19/10/2015
+- Version	: th-2015.r1.1.01-SNAPSHOT-bxxx
+- eFinance-app	: http://172.255.152.141:8080/efinance-app/
+- eFinance-ra	: http://172.255.152.141:8080/efinance-ra/
+-------------------------------------------------------------------------
+- WS RA (Configurations)
+	- Province
+		http://172.255.152.141:8080/efinance-ra/messaging/configs/provinces
+	- Districts
+		http://172.255.152.141:8080/efinance-ra/messaging/configs/districts
+	- Sub-Districts
+		http://172.255.152.141:8080/efinance-ra/messaging/configs/subdistricts
+	- Asset types
+		http://172.255.152.141:8080/efinance-ra/messaging/configs/params/assettypes
+	- Asset sub types
+		http://172.255.152.141:8080/efinance-ra/messaging/configs/params/assetsubtypes
+	- Asset Ownership
+		http://172.255.152.141:8080/efinance-ra/messaging/configs/params/assetownerships
+	- Occupation Group
+		http://172.255.152.141:8080/efinance-ra/messaging/configs/params/occupationgroups
+	- Occupation Type
+		http://172.255.152.141:8080/efinance-ra/messaging/configs/params/occupationtypes
+		
+- WS App CM		
+	- Applicants
+		http://172.255.152.141:8080/efinance-app/messaging/applicants
+
+	- Individual
+		http://172.255.152.141:8080/efinance-app/messaging/applicants/individuals
+
+	- Company
+		http://172.255.152.141:8080/efinance-app/messaging/applicants/companies
+
+- Shared libs (jars)
+	. add IndivividualDTO
+	. add CompanyDTO
+	. add UriDTO
+    . ApplicantDTO has been modified to include applicant type (Individual or Company)
+	
+-------------------------------------------------------------------------
+- Date: 06/10/2015
+- Version	: th-2015.r1.1.01-SNAPSHOT-b1-2015-10-06_11-14
+- eFinance-app	: http://server:port/efinance-app/
+- eFinance-ra	: http://server:port/efinance-ra/
+-------------------------------------------------------------------------
+- Scorecard
+	http://server:port/efinance-ra/messaging/configs/credits/scorecards
+- Risk Segments
+	http://server:port/efinance-ra/messaging/configs/credits/risksegments
+- Warehouse	
+	http://server:port/efinance-ra/messaging/configs/collections/warehouses
+- Auction Location	
+    http://server:port/efinance-ra/messaging/configs/auctions/locations
+- SMS template
+	http://server:port/efinance-ra/messaging/configs/templates/sms
+- Letter template
+    http://server:port/efinance-ra/messaging/configs/templates/letters
+	
+	
+-------------------------------------------------------------------------
+- Date: 02/10/2015
+- Version	: th-2015.r1.1.01-SNAPSHOT-b4-2015-10-02_17-38
+- eFinance-app	: http://server:port/efinance-app/
+- eFinance-ra	: http://server:port/efinance-ra/
+-------------------------------------------------------------------------
+- Blacklist
+	http://server:port/efinance-ra/messaging/configs/blacklists
+- Insurance companies
+	http://server:port/efinance-ra/messaging/configs/insurance/companies
+	http://server:port/efinance-ra/messaging/configs/insurance/companies/rootOnly
+	http://server:port/efinance-ra/messaging/configs/insurance/companies/{insOrgId}/agents
+- Agents
+	http://server:port/efinance-ra/messaging/configs/agents/companies
+	http://server:port/efinance-ra/messaging/configs/agents/companies/{idTypeAgent}
+	 Type agents: 1 Printer, 2 Registration, 3 Collection
+- Credits
+	http://server:port/efinance-ra/messaging/configs/credits/controls
+
+
+
+-------------------------------------------------------------------------
+- Date: 30/09/2015
+- Version		: th-2015.r1.1.01-SNAPSHOT-b3-2015-09-30_12-32
+- eFinance-app	: http://server:port/efinance-app/
+- eFinance-ra	: http://server:port/efinance-ra/
+-------------------------------------------------------------------------
+- Organizations
+	http://server:port/efinance-ra/messaging/configs/organizations
+- Insurance companies
+	http://server:port/efinance-ra/messaging/configs/insurance/companies
+- Insurance campaigns
+	http://server:port/efinance-ra/messaging/configs/insurance/campaigns
+- Asset Brands
+	http://server:port/efinance-ra/messaging/configs/assetbrands
+- Asset Series
+	http://server:port/efinance-ra/messaging/configs/assetranges
+	
+	
+	
+-------------------------------------------------------------------------
+- Date: 28/09/2015
+- Version		: 2015.r1.1.01-SNAPSHOT
+- eFinance-app	: http://server:port/efinance-app/
+- eFinance-ra	: http://server:port/efinance-ra/
+-------------------------------------------------------------------------
+- Organizations
+	http://server:port/efinance-ra/messaging/configs/organizations
+- Insurance companies
+	http://server:port/efinance-ra/messaging/configs/insurance/companies
+- Insurance campaigns
+	http://server:port/efinance-ra/messaging/configs/insurance/campaigns
+- Asset Brands
+	http://server:port/efinance-ra/messaging/configs/assetbrands
+- Asset Series
+	http://server:port/efinance-ra/messaging/configs/assetranges
+
+	
+	
+-------------------------------------------------------------------------
+- Date: 21/09/2015
+- Version		: 2015.r1.1.01-SNAPSHOT-b1-2015-09-21_11-04
+- eFinance-app	: http://server:port/efinance-app/
+- eFinance-ra	: http://server:port/efinance-ra/
+-------------------------------------------------------------------------
+- Administrator	: admin / admin@EFIN
+- CM
+   cm_staff / staff
+   cm_leader / leader
+- WS RA (Configurations)
+	. Params - see file "WS - Params.txt"
+		http://server:port/efinance-ra/messaging/configs/params/{table}
+	. Campaigns - see file "WS - Campaigns.txt"
+		http://server:port/efinance-ra/messaging/configs/campaigns
+	. Products lines - see file "WS - ProductLines.txt"
+		http://server:port/efinance-ra/messaging/configs/productlines
+	. Financial products - see file "WS - FinancialProducts.txt"
+		http://server:port/efinance-ra/messaging/configs/financialproducts
+	. Asset models - see file "WS - AssetModels.txt"
+		http://server:port/efinance-ra/messaging/configs/assetmodels
+	. Dealers - see file "WS - VATs.txt"
+		http://server:port/efinance-ra/messaging/configs/dealers
+	. VATs - see file "WS - Dealers.txt"
+		http://server:port/efinance-ra/messaging/configs/dealers
+- WS App CM, Collection
+	. Contracts - see file "WS - Contracts.txt"
+		http://server:port/efinance-app/messaging/contracts
+		http://server:port/efinance-app/messaging/contracts/search
+		http://server:port/efinance-app/messaging/contracts/activate
+	. Contracts After Sales Events - see file "WS - Contracts - After Sales Event.txt"
+		http://server:port/efinance-app/messaging/contracts/earlysettlement
+		http://server:port/efinance-app/messaging/contracts/repossession
+		http://server:port/efinance-app/messaging/contracts/terminate/{reference}
+		http://server:port/efinance-app/messaging/contracts/close/{reference}
+- Shared libs (jars)
+	Main DTOs
+		. RefDataDTO
+		. ContractDTO
+		. CampaignDTO
+		. ProductLineDTO
+		. FinProductDTO
+		. DealerDTO
+		. AssetModelDTO
+		. EarlySettlementDTO
+		. RepossessionDTO
+			
+
+

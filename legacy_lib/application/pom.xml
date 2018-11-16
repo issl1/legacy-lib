@@ -1,0 +1,222 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>com.nokor.efinance</groupId>
+   <artifactId>nkr-efinance-parent</artifactId>
+   <packaging>pom</packaging>
+   <name>Nokor eFinance</name>
+   <description>Nokor eFinance</description>
+   <version>th-2016.r1.1.02-SNAPSHOT</version>
+   
+	<properties>
+		<jdk.version>1.8</jdk.version>
+		<javaxservlet.version>3.1.0</javaxservlet.version>
+		
+		<nkr-frmk-services-seuksa.version>1.7.2-SNAPSHOT</nkr-frmk-services-seuksa.version>
+		<nkr-frmk-services.version>1.7.2-SNAPSHOT</nkr-frmk-services.version>
+		<nkr-frmk-messaging.version>1.7.2-SNAPSHOT</nkr-frmk-messaging.version>
+		<nkr-frmk-messaging-share.version>1.7.3</nkr-frmk-messaging-share.version>
+		<nkr-frmk-testing.version>1.7.2-SNAPSHOT</nkr-frmk-testing.version>
+		<nkr-frmk-finance.version>1.7.2-SNAPSHOT</nkr-frmk-finance.version>
+		<nkr-frmk-vaadin.version>1.7.2-SNAPSHOT</nkr-frmk-vaadin.version>
+		<nkr-vaadin-themes.version>1.7.2-SNAPSHOT</nkr-vaadin-themes.version>
+		<nkr-ersys-core-common.version>1.7.2-SNAPSHOT</nkr-ersys-core-common.version>
+		<nkr-ersys-core-collab-vaadin.version>1.7.2-SNAPSHOT</nkr-ersys-core-collab-vaadin.version>
+		<nkr-ersys-core-finance.version>1.7.2-SNAPSHOT</nkr-ersys-core-finance.version>
+		<nkr-efinance-share.version>1.0.3</nkr-efinance-share.version>
+		
+		<jcharts.version>0.7.5</jcharts.version>
+		<apache-cfx.version>2.7.3</apache-cfx.version>
+		<java-websocket.version>1.3.0</java-websocket.version>
+
+		<antlr.version>2.7.6</antlr.version>
+		<!--<asm.version>1.5.3</asm.version>-->
+		<cglib.version>2.1_3</cglib.version>
+		
+		<atmosphere-runtime.version>2.2.4.vaadin5</atmosphere-runtime.version>
+	</properties>
+
+    <scm>
+		<connection>scm:svn:https://svn.nokor-solutions.com:8081/svn/nkr-efinance-th/trunk/src</connection>
+		<developerConnection>scm:svn:https://svn.nokor-solutions.com:8081/svn/nkr-efinance-th/trunk/src</developerConnection>
+		<url>scm:svn:https://svn.nokor-solutions.com:8081/svn/nkr-efinance-th/trunk/src</url>
+		<tag>HEAD</tag>
+    </scm>
+	
+   <modules>
+      
+	  <!--module>nkr-efinance-share</module-->
+	  <module>nkr-efinance-core</module>
+	  <module>nkr-efinance-app</module>	  
+	  <module>nkr-efinance-webservices</module>
+	  <module>nkr-efinance-ra</module>
+	  <module>nkr-efinance-tm</module>
+ 	  <module>nkr-efinance-finwiz-client</module>
+      <!--module>nkr-efinance-fo</module-->
+	  <module>nkr-efinance-themes</module>
+	  <module>nkr-efinance-services-testing</module>
+<!--
+	  <module>nkr-efinance-migration</module>
+	  <module>nkr-efinance-batch</module>
+	  -->
+   </modules>
+   
+	<repositories>
+		<repository>
+			<id>vaadin-addons</id>
+			<url>http://maven.vaadin.com/vaadin-addons</url>
+		</repository>
+	</repositories>
+
+   
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>com.nokor.frmk</groupId>
+				<artifactId>nkr-frmk-services-seuksa</artifactId>
+				<version>${nkr-frmk-services-seuksa.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.nokor.frmk</groupId>
+				<artifactId>nkr-frmk-services-seuksa</artifactId>
+				<version>${nkr-frmk-services-seuksa.version}</version>
+				<classifier>sources</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.nokor.frmk</groupId>
+				<artifactId>nkr-frmk-services</artifactId>
+				<version>${nkr-frmk-services.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.nokor.frmk</groupId>
+				<artifactId>nkr-frmk-services</artifactId>
+				<version>${nkr-frmk-services.version}</version>
+				<classifier>sources</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.nokor.frmk</groupId>
+				<artifactId>nkr-frmk-messaging</artifactId>
+				<version>${nkr-frmk-messaging.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.nokor.frmk</groupId>
+				<artifactId>nkr-frmk-messaging-share</artifactId>
+				<version>${nkr-frmk-messaging-share.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.nokor.efinance</groupId>
+				<artifactId>nkr-efinance-share</artifactId>
+				<version>${nkr-efinance-share.version}</version>
+			</dependency>
+		
+			<dependency>
+				<groupId>com.nokor.ersys</groupId>
+				<artifactId>nkr-ersys-core-common</artifactId>
+				<version>${nkr-ersys-core-common.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.nokor.ersys</groupId>
+				<artifactId>nkr-ersys-core-collab-vaadin</artifactId>
+				<version>${nkr-ersys-core-collab-vaadin.version}</version>
+			 </dependency>
+			<dependency>
+				<groupId>com.nokor.frmk</groupId>
+				<artifactId>nkr-frmk-testing</artifactId>
+				<version>${nkr-frmk-testing.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.nokor.frmk</groupId>
+				<artifactId>nkr-frmk-finance</artifactId>
+				<version>${nkr-frmk-finance.version}</version>
+			 </dependency>
+			 <dependency>
+				<groupId>com.nokor.frmk</groupId>
+				<artifactId>nkr-frmk-vaadin</artifactId>
+				<version>${nkr-frmk-vaadin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.nokor.frmk</groupId>
+				<artifactId>nkr-frmk-vaadin</artifactId>
+				<version>${nkr-frmk-vaadin.version}</version>
+				<classifier>sources</classifier>
+			</dependency>
+			 <dependency>
+				<groupId>com.nokor.frmk</groupId>
+				<artifactId>nkr-vaadin-themes</artifactId>
+				<version>${nkr-vaadin-themes.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.nokor.ersys</groupId>
+				<artifactId>nkr-ersys-core-finance</artifactId>
+				<version>${nkr-ersys-core-finance.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${javaxservlet.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>jcharts</groupId>
+				<artifactId>jcharts</artifactId>
+				<version>${jcharts.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-frontend-jaxws</artifactId>
+				<version>${apache-cfx.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-transports-http</artifactId>
+				<version>${apache-cfx.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.java-websocket</groupId>
+				<artifactId>Java-WebSocket</artifactId>
+				<version>${java-websocket.version}</version>
+			</dependency>
+			
+			
+			<dependency>
+				<groupId>antlr</groupId>
+				<artifactId>antlr</artifactId>
+				<version>${antlr.version}</version>
+			</dependency>
+			
+			<!--
+			<dependency>
+				<groupId>asm</groupId>
+				<artifactId>asm-attrs</artifactId>
+				<version>${asm.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>asm</groupId>
+				<artifactId>asm</artifactId>
+				<version>${asm.version}</version>
+			</dependency>
+			-->
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib</artifactId>
+				<version>${cglib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib-nodep</artifactId>
+				<version>${cglib.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.vaadin.external.atmosphere</groupId>
+				<artifactId>atmosphere-runtime</artifactId>
+				<version>${atmosphere-runtime.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

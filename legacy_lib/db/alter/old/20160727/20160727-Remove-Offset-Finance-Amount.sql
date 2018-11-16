@@ -1,0 +1,2 @@
+﻿ALTER TABLE tu_campaign_asset_model
+DROP COLUMN cam_ass_mod_offset_finance_amount

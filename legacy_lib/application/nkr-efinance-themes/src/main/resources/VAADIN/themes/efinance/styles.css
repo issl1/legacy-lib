@@ -1,0 +1,331 @@
+@import "../nkr-borei/styles.css";
+
+@import "./layout/layouts.css";
+@import "./widget/label.css";
+@import "./widget/select.css";
+@import "./widget/textfield.css";
+@import "./widget/button.css";
+@import "./layout/timeline.css";
+
+.top-wrap {
+    border-bottom: 2px solid #3B5998;
+}
+.content-wrap {
+    margin-bottom: 25px;
+    margin-top: 90px;
+}
+
+.blackborder {
+	border: 1px solid black;
+}
+
+.noborder {
+	border: none;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.requiredfield {
+	color: red;
+}
+
+.aline {
+	display: inline-block;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.align-right div {
+	text-align: right;
+}
+
+.align-right_div div div {
+	text-align: right;
+}
+.align-center div {
+	text-align: center;
+}
+
+.align-left div { 
+	text-align: left;
+}
+
+.align-right-underline div { 
+	text-align: right;
+	text-decoration: underline;
+}
+
+.disableField input {
+	border : 1px solid rgb(188, 189, 190);
+}
+
+.v-textfield {
+	background : none;
+}
+
+.v-tabsheet-tabsheetpanel div div {
+	opacity : 1;
+}
+.v-disabled {
+	opacity : 1;
+}
+
+.checkbox_unchange_disabled_color{
+	pointer-events: none;
+}
+
+.wrap_null {
+	white-space:normal !important;
+}
+.marginRight td div{
+	margin-right:15px
+}
+
+.v-table-colortable .v-table-row-highligh {
+    background: orange;
+    color: black;
+}
+
+.v-table-colortable .v-table-row-highligh-gray {
+    background: #c2c2a3;
+    color: black;
+}
+
+.v-table-colortable .v-table-row-highligh-green {
+    background: green;
+    color: black;
+}
+
+.v-table-colortable .v-table-row-highligh-lightgreen {
+    background: lightgreen;
+    color: black;
+}
+
+.v-table-colortable .v-table-row-highligh-lightblue {
+    background: lightblue;
+    color: black;
+}
+
+.v-table-colortable .v-table-row-highligh-wheat {
+    background: wheat;
+    color: black;
+}
+
+.v-table-colortable .v-table-row-highligh-yellow {
+    background: #ffff4d;
+    color: black;
+}
+
+.v-table-colortable .v-table-row-highligh-orange {
+    background: orange;
+    color: black;
+}
+
+.v-table-colortable .v-table-row-highligh-pink {
+    background: #ff80ff;
+    color: black;
+}
+
+.v-table-colortable .v-table-row-highligh-ocean {
+    background: #ADE7FF;
+    color: black;
+}
+
+.checkbox_label_white_color {
+	color : white;
+}
+
+.image_border_style {
+    border: 1px solid black;
+}
+
+div.panel-search {
+	padding : 10px !important;
+}
+
+.v-slot-panel-search-center {
+	text-align: center;
+}
+
+.has-no-padding {
+	padding : 0px !important;
+}
+
+.v-slot-info-layout {
+	text-align: center;
+}
+.info-layout {
+	height: 100% !important;
+	vertical-align: middle;
+}
+.info-layout > div > div.v-label {
+	border-right: 1px dotted;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 10px 4px 0;
+    text-align: right;
+}
+.info-layout:last-child > div:last-child > div.v-label:last-child {
+    border-right: inherit;
+}
+.info-layout > div > div.label-value {
+	background: none repeat scroll 0 0 #8DC63F;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    padding: 4px 6px;
+    margin: 0 4px;
+    text-align: center;
+    border-right: inherit;
+    min-height: 21px;
+}
+.v-label-results-yellow {
+	background: none repeat scroll 0 0 #ffff99;
+	border-radius: 100%;
+	display: inline-block;
+	height: 20px;
+	margin: -3px 5px 0 0;
+	width: 20px;
+}
+.v-label-results-red {
+	background: none repeat scroll 0 0 #ff0000;
+	border-radius: 100%;
+	display: inline-block;
+	height: 20px;
+	margin: -3px 5px 0 0;
+	width: 20px;
+}
+.v-label-results-bright-blue{
+	background: none repeat scroll 0 0 #99ccff;
+	border-radius: 100%;
+	display: inline-block;
+	height: 20px;
+	margin: -3px 5px 0 0;
+	width: 20px;
+}
+.v-label-results-green {
+    background: none repeat scroll 0 0 #537f17;
+    border-radius: 100%;
+    display: inline-block;
+    height: 20px;
+    margin: -3px 5px 0 0;
+    width: 20px;
+}
+.v-label-results-purple {
+	background: none repeat scroll 0 0 #cc99ff;
+	border-radius: 100%;
+	display: inline-block;
+	height: 20px;
+	margin: -3px 5px 0 0;
+	width: 20px;
+}
+.v-label-results-bright-green {
+	background: none repeat scroll 0 0 #ccff00;
+	border-radius: 100%;
+	display: inline-block;
+	height: 20px;
+	margin: -3px 5px 0 0;
+	width: 20px;
+}
+.v-label-results-blue {
+	background: none repeat scroll 0 0 #003399;
+	border-radius: 100%;
+	display: inline-block;
+	height: 20px;
+	margin: -3px 5px 0 0;
+	width: 20px;
+}
+/*FormLayout Text Align*/
+.v-caption.v-caption-mytextfield-caption.v-caption-hasdescription {
+    width: 150px;
+}
+.v-caption.v-caption-mytextfield-caption-17.v-caption-hasdescription {
+    width: 170px;
+}
+.v-caption.v-caption-mytextfield-caption-19.v-caption-hasdescription {
+    width: 190px;
+}
+.myform-align-left table tr td {
+	text-align: left;
+} 
+
+/* Calculator Style */
+.v-nativebutton.v-widget.mybutton-cal.v-nativebutton-mybutton-cal.v-has-width.v-has-height {
+	background: #000000 none repeat scroll 0 0;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+}
+.v-gridlayout.v-layout.v-widget.mygrid-cal.v-gridlayout-mygrid-cal {
+	background: #ccc none repeat scroll 0 0;
+    border: 5px solid #ccc;
+    border-radius: 10px;
+}
+.v-textfield.v-widget.mytextfield-cal.v-textfield-mytextfield-cal {
+    background-color: #fff !important;
+    color: captiontext;
+    font-size: 35px;
+    height: 41px;
+    text-align: right;
+    width: 100%;
+}
+.v-nativebutton.v-widget.mybutton-cal-color.v-nativebutton-mybutton-cal-color.v-has-width.v-has-height {
+    background: #646060 none repeat scroll 0 0;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 17px;
+}
+/*Fixed Button History on Page QuotationFormPanel  */
+.v-nativebutton.v-widget.mybutton-history.v-nativebutton-mybutton-history {
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    color: #333;
+    font-size: 18px;
+   	z-index: 1;
+}
+.overflow-layout-style {
+	overflow-x: auto !important;
+}
+.label-width {
+	width: 100%;
+}
+.v-scrollable.v-panel-content > .v-widget {
+	overflow-x: auto !important;
+}
+#mylable-color div {
+	color: red;
+}
+.small-menubar-style {
+	border-radius: 4px;
+} 
+.small-menubar-style > .v-menubar-menuitem {
+  	padding: 4px !important; 	
+}
+table.row-bg-color tr:nth-child(odd) {
+	background-color: #f2ffe5;
+}
+.label-padding {
+	padding: 4px 0;
+}
+.btn-icon-padding {
+	padding-left: 6px;
+}
+button.change-bg {
+	background-color: #ffffff;
+	color: #000000 !important;
+}
+button.change-bg:FOCUS {
+	background-color: #ffffff;
+	color: #000000 !important;
+}
+button.change-bg:ACTIVE {
+	background-color: #ffffff;
+	color: #000000 !important;
+}
+.v-slot.v-slot-table-column-wrap .v-table-cell-wrapper {
+	white-space: normal;
+}

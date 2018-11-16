@@ -1,0 +1,7 @@
+INSERT INTO tu_organization(org_id, com_code, com_desc, com_desc_en, com_name, com_name_en, 
+							typ_org_id, cou_id, wkf_sta_id, version, com_licence_number, com_start_date, 
+							sta_rec_id, dt_cre, usr_cre, dt_upd, usr_upd,com_tel, sub_typ_org_id)
+VALUES 
+   --warehouse Location
+   (3, '0007', 'นครราชสีมา', 'Nakhon Ratchasima', 'นครราชสีมา', 'Nakhon Ratchasima', 4, null, 1, 1, null, null, 1, now(), 'admin', now(), 'admin',null, 5),
+   (4, '0014', 'พระนั่งเกล้า', 'Pranangklao', 'พระนั่งเกล้า', 'Pranangklao', 4, null, 1, 1, null, null, 1, now(), 'admin', now(), 'admin',null, 5);

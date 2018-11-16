@@ -1,0 +1,1 @@
+ALTER TABLE td_lock_split DROP CONSTRAINT uk_60vlsgox0jnrmman6p7ojfwk6;

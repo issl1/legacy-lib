@@ -1,0 +1,21 @@
+.v-textfield-blackdisabled {
+   opacity: 1;
+}
+
+.v-caption-blackdisabled {
+   opacity: 1;
+}
+
+
+.v-textfield-amount {
+   text-align: right;
+}
+
+.v-caption-amount {
+   text-align: right;
+}
+
+input.v-textfield-prompt, 
+textarea.v-textarea-prompt {
+    color: #999999;
+}

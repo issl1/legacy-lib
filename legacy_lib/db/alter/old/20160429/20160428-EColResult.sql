@@ -1,0 +1,22 @@
+INSERT INTO tu_col_result(col_res_code, col_res_desc, col_res_desc_en, col_typ_id,
+             dt_cre, usr_cre, dt_upd, usr_upd, sta_rec_id, sort_index)
+   VALUES 
+   		('P01', 'Made 1st promise', 'Made 1st promise', 												1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P02', 'Made 2nd promise', 'Made 2nd promise', 												1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P03', 'Made 3st promise', 'Made 3st promise', 												1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P04', 'Said already paid ', 'Said already paid ', 											1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P05', 'Want to return motorbike without paying', 'Want to return motorbike without paying', 	1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P06', 'Motorbike is at garage', 'Motorbike is at garage', 									1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P07', 'Want to return motorbike and pay', 'Want to return motorbike and pay', 				1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P08', 'Lost/damaged motorbike', 'Lost/damaged motorbike', 									1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P09', 'Motorbike is pawned', 'Motorbike is pawned', 											1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P10', 'Motorbike at police station', 'Motorbike at police station', 							1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P11', 'No answer', 'No answer', 																1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P12', 'Busy - call back later', 'Busy - call back later', 									1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P13', 'Doesnt want to pay', 'Doesnt want to pay', 											1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P14', 'Wrong/dead number', 'Wrong/dead number', 												1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P15', 'Dead / incapacity to pay or return', 'Dead / incapacity to pay or return', 			1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P16', 'Returned motorbike already', 'Returned motorbike already', 							1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P17', 'Lessee has disappeared', 'Lessee has disappeared', 									1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P18', 'Want to close account', 'Want to close account', 										1, now(), 'admin', now(), 'admin', 1, 0),
+   		('P19', 'Other', 'Other', 																		1, now(), 'admin', now(), 'admin', 1, 0);

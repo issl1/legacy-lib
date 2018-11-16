@@ -1,0 +1,9 @@
+Run Dummy Test to Generate Hibernate entities tables
+
+	
+	/**
+	 * 
+	 */
+	public void testDummy() {
+
+	}

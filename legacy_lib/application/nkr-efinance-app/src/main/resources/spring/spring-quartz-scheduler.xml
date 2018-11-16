@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+			
+	<bean name="contractsOtherDataJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="com.nokor.efinance.gui.job.contract.ContractsOtherDataJob" />
+		<property name="durability" value="true" />
+	</bean>
+		
+	<bean name="assignCollectionContractsJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="com.nokor.efinance.gui.job.contract.AssignCollectionContractsJob" />
+		<property name="durability" value="true" />
+	</bean>
+	
+	<bean name="assignCallCenterContractsJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="com.nokor.efinance.gui.job.contract.AssignCallCenterContractsJob" />
+		<property name="durability" value="true" />
+	</bean>
+	
+	<bean name="lockSplitsJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="com.nokor.efinance.gui.job.contract.LockSplitsJob" />
+		<property name="durability" value="true" />
+	</bean>
+	
+	<bean name="contractRedemptionJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="com.nokor.efinance.gui.job.contract.ContractRedemptionJob" />
+		<property name="durability" value="true" />
+	</bean>
+		
+	<bean id="contractsOtherDataTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="contractsOtherDataJob" />
+		<property name="cronExpression" value="0 0 21 * * ?"/>
+	</bean>
+		
+	<bean id="assignCollectionContractsTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="assignCollectionContractsJob" />
+		<property name="cronExpression" value="0 5 22 * * ?"/>
+	</bean>
+	
+	<bean id="assignCallCenterContractsTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="assignCallCenterContractsJob" />
+		<property name="cronExpression" value="0 0 22 * * ?"/>
+	</bean>
+	
+	<bean id="lockSplitsTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="lockSplitsJob" />
+		<property name="cronExpression" value="0 0 23 * * ?"/>
+	</bean>
+	
+	<bean id="contractRedemptionTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="contractRedemptionJob" />
+		<property name="cronExpression" value="0 0 21 * * ?"/>
+	</bean>
+		
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	    <property name="jobDetails">
+			<list>
+				<ref bean="contractsOtherDataJob"/>
+				<ref bean="assignCollectionContractsJob"/>
+				<ref bean="assignCallCenterContractsJob"/>
+				<ref bean="lockSplitsJob"/>
+				<ref bean="contractRedemptionJob"/>
+			</list>
+		</property>
+		
+	    <property name="triggers">
+	        <list>
+	            <ref bean="contractsOtherDataTrigger"/>
+	            <ref bean="assignCollectionContractsTrigger"/>
+	            <ref bean="assignCallCenterContractsTrigger"/>
+	            <ref bean="lockSplitsTrigger"/>
+	            <ref bean="contractRedemptionTrigger"/>
+	        </list>
+	    </property>
+	</bean>
+	
+</beans>

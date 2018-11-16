@@ -1,0 +1,47 @@
+.v-table-header-wrap, 
+.white .v-table-header-wrap, 
+.v-table-footer-wrap, 
+.white .v-table-footer-wrap, 
+.v-table-header-drag {
+    text-transform: inherit;
+}
+
+.v-table .v-selected, .black .v-table .v-selected {
+    background: none repeat scroll 0 0 #D6E8FF;
+    color: #000000;
+    text-shadow: inherit;
+}
+
+.v-table .v-selected .v-table-cell-content {
+    border-right-color: #D3D4D5;
+}
+
+.v-table-header-wrap, .white .v-table-header-wrap, .v-table-footer-wrap, .white .v-table-footer-wrap, .v-table-header-drag {
+    font-size: 11px;
+    font-weight: bold;
+    text-shadow: none;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #ededed 0%, #d5d5d5 100%) repeat scroll 0 0;
+	height: 25px;
+}
+
+.v-table-resizer, .v-table-header, .v-table-footer, .v-table-footer table, .v-table-sort-indicator {
+    height: 25px;
+}
+
+.v-caption-pagedtable .v-captiontext {
+    color: #3B5998;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.v-contextmenu .v-on, .v-contextmenu .v-off {
+ height: 13px;
+}
+
+.v-table-column-selector {
+margin-top: -22px;
+}
+
+.v-table-caption-container, .v-table-header-drag {
+ line-height: 18px;
+}

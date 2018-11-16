@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.nokor.efinance</groupId>
+	<artifactId>nkr-efinance-batch</artifactId>
+	<packaging>pom</packaging>
+	<name>Nokor-eFinance Batch</name>
+	<description>Nokor-eFinance Batch</description>
+	<parent>
+		<groupId>com.nokor.efinance</groupId>
+		<artifactId>nkr-efinance-parent</artifactId>
+	  <version>th-2016.r1.1.02-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<modules>
+		<module>nkr-efinance-batch-core</module>
+		<!--module>nkr-efinance-batch-contract-end</module-->
+		<module>nkr-efinance-batch-lease-info</module>
+		<!--module>nkr-efinance-batch-cbc-report</module-->
+	</modules>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.nokor.efinance</groupId>
+			<artifactId>nkr-efinance-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		
+	</dependencies>
+</project>
+

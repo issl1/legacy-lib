@@ -1,0 +1,10 @@
+SELECT DISTINCT table_name FROM information_schema.columns 
+where table_catalog = 'efinance-th'
+and table_schema = 'public'
+order by table_name;
+
+SELECT table_name, column_name, data_type FROM information_schema.columns 
+where table_catalog = 'efinance-th'
+and table_schema = 'public'
+ORDER BY table_name, ordinal_position;
+

@@ -1,0 +1,36 @@
+.v-window-outerheader {
+    background: none repeat scroll 0 0 #3B5998;
+}
+
+.v-window-closebox {
+    background: url("../../nkr-default/icons/16/cross-white.png") no-repeat scroll 0 0 #3B5998;
+}
+
+.v-window-closebox:hover {
+    background-image: url("../../nkr-default/icons/16/cross-white.png");
+    background-position: inherit;
+}
+
+.v-window-closebox:active {
+    background-image: url("../../nkr-default/icons/16/cross-white.png");
+    background-position: inherit;
+    margin: 2px;
+}
+
+.v-window-maximizebox, .v-window-maximizebox:hover, .v-window-maximizebox:active {
+    background-image: url("../../nkr-default/icons/16/dialog-maximizebox-blue.png");
+    background-position: inherit;
+}
+
+.v-window-maximizebox:active {
+	margin: 2px;
+}
+
+.v-window-restorebox, .v-window-restorebox:hover, .v-window-restorebox:active {
+    background-image: url("../../nkr-default/icons/16/dialog-restorebox-blue.png");
+    background-position: inherit;
+}
+
+.v-window-restorebox:active {
+	margin: 2px;
+}

@@ -1,0 +1,36 @@
+.abcde {color: red}
+
+.v-verticallayout .message>div.v-slot {
+	width: 100%;
+}
+
+.v-verticallayout .message>div>div.v-horizontallayout {
+	width: 100%;
+}
+
+.v-verticallayout .message > div > div > div > div.v-has-caption {
+    font-size: inherit;
+}
+
+.v-verticallayout .message {
+	border: 1px solid #cccccc;
+	background: #dddddd;
+	padding: 5px 15px 5px 15px !important;	
+}
+
+.v-verticallayout .message .info {
+	width: 100%;
+}
+
+.v-verticallayout .message .info_date {
+	text-align: right;
+	width: 100%;
+}
+
+.v-verticallayout .message .success {
+	color: #349aff;
+}
+
+.v-verticallayout .message .error {
+	color: red;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://jboss.org/kie/6.0.0/kmodule">
+
+    <kbase name="InterestKB" packages="com.nokor.efinance">
+        <ksession name="HelloWorldKS"/>
+    </kbase>
+	
+    <kbase name="CashFlowKB" packages="org.drools.examples.cashflow">
+        <ksession name="CashFlowKS"/>
+    </kbase>
+
+    <kbase name="DecisionTableKB" packages="org.drools.examples.decisiontable">
+        <ksession name="DecisionTableKS" type="stateless"/>
+    </kbase>
+</kmodule>

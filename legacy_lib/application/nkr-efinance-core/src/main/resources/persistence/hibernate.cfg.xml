@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+ 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <!-- a SessionFactory instance listed as /jndi/name -->	
+	<session-factory>
+		<!-- <property name="hibernate.transaction.factory_class">org.hibernate.engine.transaction.spi.TransactionFactory</property> -->
+		<property name="hibernate.transaction.coordinator_class">jdbc</property>
+		<property name="configurationClass">org.hibernate.cfg.Configuration</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+		<property name="hibernate.use_sql_comments">true</property>
+		<property name="hibernate.format_sql">true</property>
+
+		<!-- <property name="hibernate.use_outer_join">true</property> -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+   		<property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
+   		<property name="hibernate.jdbc_use_scrollable_resultset">true</property>
+		<property name="hibernate.jdbc.fetch_size">150</property>
+		<property name="hibernate.jdbc.batch_size">50</property>
+		<property name="hibernate.jdbc.use_get_generated_keys">true</property>
+
+		<property name="hibernate.default_batch_fetch_size">50</property>
+		<property name="hibernate.bytecode.use_reflection_optimizer">true</property>
+		<property name="hibernate.query.substitutions">true 1, false 0</property>
+
+		<property name="hibernate.connection.zeroDateTimeBehavior">convertToNull</property>	
+		<property name="hibernate.connection.charSet">UTF-8</property>
+		<property name="hibernate.connection.useUnicode">true</property>
+		<property name="hibernate.generate_statistics">true</property> 
+		
+		<property name="hibernate.enable_lazy_load_no_trans">true</property>
+
+		<!-- mapping resource files -->
+
+		<!-- mapping frmk entities -->
+		<!-- see packagesToScan in application-dao-context.xml-->
+		
+	</session-factory>
+</hibernate-configuration>

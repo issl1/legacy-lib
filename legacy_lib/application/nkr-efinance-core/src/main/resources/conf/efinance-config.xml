@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+	<document>
+		<path>/tmp/document/prod</path>
+	</document>
+	<specific>
+		<tmpdir>/tmp/document/tmp</tmpdir>
+		<templatedir>/tmp/document/template</templatedir>
+	</specific>
+	<credit-bureau>
+		<nb-max-enquiry>1</nb-max-enquiry>
+	</credit-bureau>
+</configuration>

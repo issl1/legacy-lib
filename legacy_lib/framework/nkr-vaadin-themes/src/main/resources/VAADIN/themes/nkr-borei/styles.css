@@ -1,0 +1,266 @@
+@import "../reindeer/legacy-styles.css";
+
+@import "../nkr-default/widget/label.css";
+@import "../nkr-default/widget/login.css";
+@import "../nkr-default/widget/wizards.css";
+@import "../nkr-default/widget/loading-indicator.css";
+@import "../nkr-default/widget/dialog.css";
+
+@import "widget/menubar.css";
+@import "widget/left-menu.css";
+
+@import "widget/table.css";
+@import "widget/tabsheet.css";
+@import "widget/sidebar.css";
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700,500,400italic,700italic,300italic);
+@import url(http://fonts.googleapis.com/css?family=Siemreap);
+
+.v-app, .v-window, .v-popupview-popup, .v-tooltip, .v-app input, .v-app select, .v-app button, .v-app textarea, .v-window input, .v-window select, .v-window button, .v-window textarea, .v-popupview-popup input, .v-popupview-popup select, .v-popupview-popup button, .v-popupview-popup textarea, .v-filterselect-suggestpopup, .v-datefield-popup, .v-contextmenu, .v-Notification, .v-menubar-submenu, .v-drag-element, .v-table-header-drag,
+.v-label, .v-caption, .v-button-caption, .v-select-option, .v-app, .v-window, .v-popupview-popup, .v-tooltip, .v-app input, .v-app select, .v-app button, .v-app textarea, .v-window input, .v-window select, .v-window button, .v-window textarea, .v-popupview-popup input, .v-popupview-popup select, .v-popupview-popup button, .v-popupview-popup textarea, .v-filterselect-suggestpopup, .v-datefield-popup, .v-contextmenu, .v-Notification, .v-menubar-submenu, .v-drag-element, .v-table-header-drag,
+.v-captiontext
+{
+	font-family: 'Roboto', 'Siemreap', sans-serif !important;
+}
+
+.root-wrap {
+	overflow: hidden;
+}
+
+.top-wrap {
+	position: fixed;
+}
+
+.top-info-layout {
+	padding-left: 175px;
+	height: 50px;
+}
+
+.content-wrap {
+	margin-bottom: 30px;
+	margin-top: 85px;
+	background-color: #F5F5F5;
+	overflow: hidden;
+}
+
+.right-wrap {
+	overflow: auto;
+	
+}
+.right-wrap > div.v-expand {
+    margin-top: -10px;
+}
+
+.v-link-logo {
+	background: none repeat scroll 0 0 #FFFFFF;
+	text-align: center;
+    margin: 5px;
+    height: auto;
+    max-width: 160px;
+    max-height: 70px;
+}
+.v-link-logo img {
+    height: 50px;
+}
+
+.v-link-top-logo {
+    background: none repeat scroll 0 0 #F5F5F5;
+    text-align: center;
+    width: 175px;
+}
+.v-link-top-logo img {
+    margin: 5px;
+    height: auto;
+    max-width: 160px;
+    max-height: 70px;
+}
+
+input.v-disabled, 
+textarea.v-disabled {
+    background-color: #EFEFEF;
+}
+
+.v-caption {
+    white-space: normal;
+}
+
+.v-icon {
+    color: #016ED3;
+    font-size: 14px;
+}
+
+.v-disabled .v-icon {
+    color: gray;
+}
+
+.pagedtable-button .v-icon {
+	font-size: 12px;
+}
+
+.v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-captioncell, 
+.v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-contentcell, 
+.v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-errorcell {
+    padding-bottom: 5px;
+}
+
+.v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-captioncell, 
+.v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-contentcell, 
+.v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-errorcell {
+    padding-top: 5px;
+}
+
+.v-formlayout-captioncell {
+    min-width: 130px;
+}
+
+.v-formlayout-captioncell .v-label {
+	text-align: right;
+}
+
+.caption-field {
+	padding-right: 8px;
+}
+
+.panel-search .v-formlayout-captioncell {
+    min-width: 80px;
+}
+
+.image_border_style {
+    border: 1px solid #CACACA;
+}
+
+.v-orderedlayout-margin-left, 
+.v-horizontallayout-margin-left, 
+.v-verticallayout-margin-left, 
+.v-layout.v-margin-left {
+    padding-left: 10px;
+}
+
+.v-orderedlayout-margin-bottom, 
+.v-horizontallayout-margin-bottom, 
+.v-verticallayout-margin-bottom, 
+.v-layout.v-margin-bottom {
+    padding-bottom: 10px;
+}
+
+.v-orderedlayout-margin-right, 
+.v-horizontallayout-margin-right, 
+.v-verticallayout-margin-right, 
+.v-layout.v-margin-right {
+    padding-right: 10px;
+}
+
+.v-orderedlayout-margin-top, 
+.v-horizontallayout-margin-top, 
+.v-verticallayout-margin-top, 
+.v-layout.v-margin-top {
+    padding-top: 10px;
+}
+
+/*---------STYLE IMAGE PANEL---------*/
+
+.v-slot-image_border_style {
+    background: #eeeeee none repeat scroll 0 0;
+    height: 111px !important;
+    position: relative;
+    width: 96px;
+}
+.v-tabsheet-tabsheetpanel .image-div, .image-div {
+	height: 111px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 95px;
+	text-align: center;
+}
+.v-slot-image_border_style:hover .image-div {
+	font-size: 14px;
+    font-weight: 700;
+    margin-top: 20px;
+    opacity: 0.8;
+    padding: 10px;
+	
+}
+.v-slot-image_border_style a {
+	background: #e7f0fe none repeat scroll 0 0;
+    border: 1px solid #bbbbbb;
+    color: #3b5998;
+    display: block;
+    margin-bottom: 2px;
+    padding: 1px 3px;
+    text-align: center;
+    text-decoration: none;
+	border-radius: 3px;
+}
+.v-slot-image_border_style a:hover {
+	text-decoration: none;
+	background: #fff;
+}
+
+.control-group-layout {
+	margin: 5px;
+    padding: 5px;
+}
+.control-group-header {
+    border-bottom: 1px solid;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-bottom: 2px;
+    text-transform: uppercase;
+    width: auto;
+}
+.control-group-parent-row {
+    width: auto;
+    padding: 5px 5px 0 5px;
+}
+.control-group-row {
+    width: auto;
+    padding: 5px 5px 2px 5px;
+    border-bottom: 1px solid;
+}
+.control-group-row > div > span.v-checkbox {
+    width: 65px;
+}
+.control-label-level-1 {
+    padding-top: 3px;
+}
+.control-label-level-2 {
+    padding-left: 10px;
+    padding-top: 3px;
+}
+.control-label-level-2 {
+    padding-left: 20px;
+    padding-top: 3px;
+}
+.control-label-level-3 {
+    padding-left: 30px;
+    padding-top: 3px;
+}
+.control-label-level-4 {
+    padding-left: 40px;
+    padding-top: 3px;
+}
+.control-label-level-5 {
+    padding-left: 50px;
+    padding-top: 3px;
+}
+.v-panel-caption {
+    padding-bottom: 7px;
+}
+
+/*---------STYLE About Window---------*/
+.about-bg-color-style {
+	background-color: #F5F5F5;
+}
+.about-btn-border-color-style {
+	border-right: 1px #C4CACF solid;
+}
+
+/*---------STYLE Disable Combobox---------*/
+.v-app .v-disabled .v-filterselect-input {
+	background : rgba(0, 0, 0, 0) url("images/vertical-sprites_2.png") repeat-x scroll left -432px
+}
+
+.v-disabled .v-filterselect-button {
+	background-image: url("images/vertical-sprites_2.png");
+}

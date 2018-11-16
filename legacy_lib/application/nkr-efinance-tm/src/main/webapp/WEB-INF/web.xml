@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.5"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns="http://java.sun.com/xml/ns/javaee" 
+		xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <display-name>Nokor eFinance Repository Application</display-name>
+    
+    <context-param>
+        <description>eFinance production mode</description>
+        <param-name>productionMode</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    
+    <context-param>
+	    <param-name>heartbeatInterval</param-name>
+	    <param-value>3600</param-value>
+	</context-param>
+   
+	<!-- Spring main context -->
+    <context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:application-main-context.xml
+        </param-value>
+	</context-param>
+	
+	<!-- Spring security -->
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>targetFilterLifecycle</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping> 
+    
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    <listener>
+    	<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+  	</listener>
+	<!-- Startup Initializer -->
+    <listener>
+        <listener-class>com.nokor.efinance.core.web.spring.FinStartupInitializer</listener-class>
+    </listener>
+	
+	<!-- Spring/Hibernate openSessionInViewFilter -->
+	<!-- should always on the top of Filters such as StrutsPrepareAndExecuteFilter -->
+	<filter>
+        <filter-name>openSessionInViewFilter</filter-name>
+        <filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
+        <init-param>
+            <param-name>sessionFactoryBeanName</param-name>
+            <param-value>sessionFactory</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>openSessionInViewFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+	<filter>
+	    <filter-name>deviceResolverRequestFilter</filter-name>
+	    <filter-class>org.springframework.mobile.device.DeviceResolverRequestFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>deviceResolverRequestFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- Spring/Vaadin Servlet, UI entry point -->
+    <servlet>
+        <servlet-name>efinance</servlet-name>
+        <servlet-class>ru.xpoft.vaadin.SpringVaadinServlet</servlet-class>
+        <init-param>
+            <param-name>beanName</param-name>
+            <param-value>mainUI</param-value>
+        </init-param>
+        <init-param>
+            <param-name>systemMessagesBeanName</param-name>
+            <param-value>DEFAULT</param-value>
+        </init-param>
+		<!--
+        <init-param>
+			<description>Use Default Widgetset</description>
+			<param-name>widgetset</param-name>
+			<param-value>com.nokor.frmk.vaadin.ui.widget.component.WidgetSet</param-value>
+		</init-param>
+		-->
+    </servlet>
+	
+	<servlet>
+		<servlet-name>jersey-rest-servlet</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>
+				com.nokor.common.messaging.ws.resource.cfg.tools,
+				com.nokor.common.messaging.ws.resource.cfg,
+				com.nokor.ersys.messaging.ws.resource, 
+				com.nokor.efinance.ws.resource.config
+			</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>jersey-rest-servlet</servlet-name>
+		<url-pattern>/messaging/*</url-pattern>
+	</servlet-mapping>	
+    
+    <servlet-mapping>
+        <servlet-name>efinance</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>efinance</servlet-name>
+        <url-pattern>/VAADIN/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/static/*</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+    	<session-timeout>30</session-timeout> 
+    </session-config>
+    
+</web-app>

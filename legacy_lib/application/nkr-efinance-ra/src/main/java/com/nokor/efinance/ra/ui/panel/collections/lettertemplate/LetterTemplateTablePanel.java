@@ -1,0 +1,87 @@
+package com.nokor.efinance.ra.ui.panel.collections.lettertemplate;
+
+import javax.annotation.PostConstruct;
+
+import org.seuksa.frmk.i18n.I18N;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import com.nokor.efinance.core.common.reference.model.ELetterTemplate;
+import com.nokor.efinance.core.shared.collection.CollectionEntityField;
+import com.nokor.frmk.vaadin.ui.panel.AbstractTablePanel;
+import com.nokor.frmk.vaadin.ui.widget.table.PagedDataProvider;
+import com.nokor.frmk.vaadin.ui.widget.table.PagedDefinition;
+import com.nokor.frmk.vaadin.ui.widget.table.impl.EntityPagedDataProvider;
+import com.vaadin.ui.Table.Align;
+
+/**
+ * 
+ * @author buntha.chea
+ *
+ */
+@Component
+@Scope(BeanDefinition.SCOPE_PROTOTYPE)
+public class LetterTemplateTablePanel extends AbstractTablePanel<ELetterTemplate> implements CollectionEntityField {
+		
+	private static final long serialVersionUID = 6284842533399649221L;
+	
+	@PostConstruct
+	public void PostConstruct() {
+		setCaption(I18N.message("letter.templates"));
+		setSizeFull();
+		setMargin(true);
+		setSpacing(true);
+
+		super.init(I18N.message("letter.templates"));
+		
+		addDefaultNavigation();
+	}
+	
+	/**
+	 * Get item selected id
+	 * @return
+	 */
+	public Long getItemSelectedId() {
+		if (selectedItem != null) {
+			return (Long) selectedItem.getItemProperty(ID).getValue();
+		}
+		return null;
+	}
+		
+	/**
+	 * @see com.nokor.frmk.vaadin.ui.panel.AbstractTablePanel#createPagedDataProvider()
+	 */
+	@Override
+	protected PagedDataProvider<ELetterTemplate> createPagedDataProvider() {
+		PagedDefinition<ELetterTemplate> pagedDefinition = new PagedDefinition<ELetterTemplate>(searchPanel.getRestrictions());
+		pagedDefinition.addColumnDefinition(ID, I18N.message("id"), Long.class, Align.LEFT, 100, false);
+		pagedDefinition.addColumnDefinition(CODE, I18N.message("code"), String.class, Align.LEFT, 100);
+		pagedDefinition.addColumnDefinition(DESC_EN, I18N.message("desc.en"), String.class, Align.LEFT, 200);
+		pagedDefinition.addColumnDefinition(DESC, I18N.message("desc"), String.class, Align.LEFT, 200);
+
+		EntityPagedDataProvider<ELetterTemplate> pagedDataProvider = new EntityPagedDataProvider<ELetterTemplate>();
+		pagedDataProvider.setPagedDefinition(pagedDefinition);
+		return pagedDataProvider;
+	}
+			
+	/**
+	 * @see com.nokor.frmk.vaadin.ui.panel.AbstractTablePanel#getEntity()
+	 */
+	@Override
+	protected ELetterTemplate getEntity() {
+		if (selectedItem != null) {
+			final Long id = (Long) selectedItem.getItemProperty(ID).getValue();
+		    return ENTITY_SRV.getById(ELetterTemplate.class, id);
+		}
+		return null;
+	}
+	
+	/**
+	 * @see com.nokor.frmk.vaadin.ui.panel.AbstractTablePanel#createSearchPanel()
+	 */
+	@Override
+	protected LetterTemplateSearchPanel createSearchPanel() {
+		return new LetterTemplateSearchPanel(this);		
+	}
+}

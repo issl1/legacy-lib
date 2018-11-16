@@ -1,0 +1,91 @@
+.left-wrap {
+    background-color: #F5F5F5;
+    border-right: 1px solid #CACACA;
+}
+.left-menu-hide {
+    margin-left: -140px;
+}
+.left-menu-hide .v-button .v-icon {
+    float: right;
+    margin: 2px 10px 0 0;
+}
+.left-menu-show {
+    margin-left: 0;
+}
+.left-menu-header {
+    border-bottom: 1px solid #CACACA;
+    border-top: 1px solid #CACACA;
+    padding: 3px 5px 8px 10px;
+    width: 100%;
+}
+.left-menu-hide .left-menu-header .v-label {
+    margin-left: 0;
+    width: 145px;
+}
+.left-menu-header .v-label {
+    color: #3B5998;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: -6px;
+    margin-top: 6px;
+    width: 138px;
+}
+.left-menu-header .v-button .v-icon {
+    border: 1px solid #F5F5F5;
+    border-radius: 3px;
+    margin: 0;
+    padding: 5px;
+}
+.left-menu-header .v-button .v-icon:hover {
+    border: 1px solid #BBBBBB;
+}
+.left-sub-menu-header {
+    color: #3B5998 !important;
+    font-size: 12px !important;
+    font-weight: bold;
+    margin: 7px;
+    width: inherit !important;
+}
+.v-slot-left-wrap .v-slot {
+	height: auto !important
+}
+.left-menu-content {
+    margin-left: 0;
+    overflow: auto;
+}
+.v-slot-left-menu-item, .v-slot-left-menu-item-selected {
+    height: auto !important;
+}
+.left-menu-item {
+    margin-left: 0;
+    padding: 8px 0 8px 10px !important;
+    width: 100%;
+}
+.left-menu-item .v-button-wrap .v-button-caption {
+    color: #3B5998 !important;
+    margin-left: 1px;
+    text-decoration: none;
+}
+.left-menu-item:hover, .left-menu-item:active {
+    background: none repeat scroll 0 0 #DDDDDD;
+}
+.left-menu-item .v-button-wrap .v-button-caption:hover {
+    color: #3B5998 !important;
+}
+.left-menu-item .v-icon, .left-menu-item-selected .v-icon {
+    color: #3B5998;
+}
+.left-menu-item-selected {
+    background: none repeat scroll 0 0 #DDDDDD !important;
+    padding: 8px 0 8px 10px !important;
+    width: 100%;
+}
+.left-menu-item-selected:hover {
+    background: none repeat scroll 0 0 #DDDDDD;
+}
+.left-menu-item-selected .v-button-wrap .v-button-caption {
+    color: #3B5998 !important;
+    font-size: 12px;
+    margin-left: 1px;
+    text-decoration: none;
+}

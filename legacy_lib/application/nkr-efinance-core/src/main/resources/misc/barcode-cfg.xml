@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<barcode>
+  <code128>
+      <height>15mm</height>
+      <module-width>0.21mm</module-width>
+      <codesets>ABC</codesets>
+      <quiet-zone enabled="true">10mw</quiet-zone>
+      <human-readable>
+        <placement>bottom</placement>
+        <font-name>Helvetica</font-name>
+        <font-size>8pt</font-size>
+      </human-readable>
+  </code128>
+</barcode>

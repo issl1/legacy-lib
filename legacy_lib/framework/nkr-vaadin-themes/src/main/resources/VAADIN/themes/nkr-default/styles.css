@@ -1,0 +1,28 @@
+@import "../reindeer/legacy-styles.css";
+@import "widget/dialog.css";
+@import "widget/menubar.css";
+@import "widget/sidebar.css";
+@import "widget/wizards.css";
+@import "widget/label.css";
+@import "widget/loading-indicator.css";
+
+.root-wrap {
+	overflow: hidden;
+}
+
+.top-wrap {
+	position: fixed;
+}
+
+.content-wrap {
+	margin-top: 57px;
+	overflow: auto;
+}
+
+input.v-disabled, textarea.v-disabled {
+    background-color: #EFEFEF;
+}
+
+.display-block {
+	display: block;
+}

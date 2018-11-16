@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+	<creditbureau>
+		<strategy>CBC</strategy>
+		<cbc>
+			<url>https://uat.creditbureaucambodia.com.kh/enquiry/inthttp.pgm</url>
+			<security>
+				<username>GLF_TEST</username>
+				<password>glf789</password>
+				<port>443</port>
+			</security>
+			<member_id>330</member_id>
+			<user_id>GLF_TEST</user_id>
+			<currency>USD</currency>
+		</cbc>
+	</creditbureau>
+	<thirdparty>
+		<wing>
+			<username>GLF_WING</username>
+			<password>glf123456</password>
+		</wing>
+		<paygo>
+			<username>GLF_PAYGO</username>
+			<password>glf123456</password>
+		</paygo>
+	</thirdparty>
+</configuration>

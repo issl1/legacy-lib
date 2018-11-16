@@ -1,0 +1,13 @@
+.v-gridlayout-blackborder {
+    background: black; 
+    margin:     10px;
+}
+
+.v-gridlayout-blackborder .v-gridlayout-margin {
+    padding: 2px;     
+}
+
+.v-gridlayout-blackborder > div > div > div {
+    padding:    2px; 
+    background: white;
+}

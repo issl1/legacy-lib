@@ -1,0 +1,58 @@
+=========================================================================
+==                        EFINANCE APP Release file                    ==
+=========================================================================
+
+-------------------------------------------------------------------------
+- Date: xx/02/2016
+- Version	: 2016.r1.1.02-SNAPSHOT
+-------------------------------------------------------------------------
+
+	.	(Bug #900)-LOS: Can't save contactInfos in references service
+	.	(Bug #901)-LOS: Occupationtypes parameter service can not be found on http://172.255.152.74
+	.	(Bug #902 & But #904)-LOS: Can't update address type from update address service on 74
+	.	(Feature #905)-LOS: Add IsPrimary in ContactInfoDTO
+	.	(Feature #906)-LOS: Add Spouse attr in IndividualDTO
+	.	(Bug #908)-LOS: Model service and model don't match
+	.	(Feature #910)-LOS: Add remark attr in ReferenceInfoDTO
+	.	(Feature #911)-LOS: Add floor and room no in AddressDTO
+	.	(Bug #933)-LOS: Search by assetCate and term in efinance-ra/messaging/configs/minimuminterests
+
+-------------------------------------------------------------------------
+- Date: xx/12/2015
+- Version	: 2015.r1.1.01-SNAPSHOT
+-------------------------------------------------------------------------
+    . Bug #xx
+    . Feature #315: PHONE LEADER : dashbord
+    . Feature #619: FIELD : Assignment parameters
+    . Feature #621: FIELD : Supervisor dashboard
+    . Feature #620: FIELD : Assignment process according to rule Dept Pressing - Field
+    . Bug #333: Force Contract, however, system cannot identify the cause of force and status should be active
+    . Bug #335: System can identify the cause of Hold Payment
+	
+-------------------------------------------------------------------------
+- Date: 22/12/2015
+- Redmine: http://172.255.152.138:10083/versions/1
+- Confluence: http://172.255.152.138:8090/display/FIN/Releases
+- Version	: 2015.r1.1.01-SNAPSHOT
+-------------------------------------------------------------------------
+	. Feature #634: remain something in address
+	. Feature #636: remain something in contract info
+	. Feature #637: remain financial data in IndividualDTO
+	. Feature #638: remain something in jobs
+
+-------------------------------------------------------------------------
+- Date: 15/12/2015
+- Redmine: #627
+- Confluence: http://172.255.152.138:8090/display/FIN/Releases
+- Version	: 2015.r1.1.01-SNAPSHOT
+-------------------------------------------------------------------------
+    . Bug #626: Change Long::Brand,Model,CC of motorcycles to RefDataDTO in AssetDTO
+    . Bug #625: Change Long::ColorId to RefDataDTO in AssetDTO
+	. Bug #593: Document list on Tab Document does not match with Tab Loan and Tab Validation
+	. Bug #616:	Bug returned data of journal entry is not consistency when they are created and get by id
+	. Bug #617:	Bug error posting a journal entry to ledger
+	. Bug #618:	Bug error when reconciling a journal entry
+	. Feature #591: Web Service to check if Chassis number/engine number of Asset already exists
+    . Feature #590: Web Service to Update Asset by registration number in CM module
+	. Feature #348: Implement a web service for lock split
+	. Feature #610: Send SMS to Lessee/Spouse/Guarantor

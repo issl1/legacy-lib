@@ -1,0 +1,1 @@
+UPDATE ts_ref_table set ref_tab_field_name1 = null, ref_tab_field1_cus_typ_id = null where ref_tab_id = 241;

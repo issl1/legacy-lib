@@ -1,0 +1,1 @@
+﻿ALTER TABLE td_collection_history ALTER COLUMN col_typ_id DROP NOT NULL;

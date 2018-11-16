@@ -1,0 +1,26 @@
+.v-loading-indicator,
+.v-loading-indicator-delay,
+.v-loading-indicator-wait {
+	width: 100%;  
+    height: 100%;  
+    margin: 0;  
+	background: transparent url(../images/spinner.gif);
+    background-position: 50%;  
+    background-color: gray;  
+    background-repeat: no-repeat;  
+    background-attachment: fixed;   
+    opacity: .8;  
+    -ms-filter: alpha(opacity=80);  
+    filter: alpha(opacity=80);
+}
+
+.v-ie &,
+.v-op & {
+	.v-loading-indicator,
+	.v-loading-indicator-delay,
+	.v-loading-indicator-wait {
+		background-image: url(../images/spinner.gif);
+		opacity: .8;
+		filter: alpha(opacity=80);
+	}
+}

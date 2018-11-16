@@ -1,0 +1,2 @@
+﻿update ts_ref_table set ref_tab_shortname = 'applicanttypes' where ref_tab_code = 'com.nokor.efinance.core.applicant.model.EApplicantType' and ref_tab_id = 400;
+ALTER TABLE td_collection_history DROP COLUMN sec_usr_id;

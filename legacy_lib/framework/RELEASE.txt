@@ -1,0 +1,24 @@
+=====================================
+= Version: 1.7.1-2                  =
+= Revision 1737                     =
+= Release date: 29/12/2015          =
+=====================================
+- 
+
+
+=====================================
+= Version: 1.6.3                    =
+= Release date: 17/07/2015          =
+=====================================
+- Security / Menu / Controls
+- Security Vaadin screen
+- RefData Vaadin screen
+- History multi-tables
+
+=====================================
+= Version: 1.6.2                    =
+= Release date: 30/05/2015          =
+=====================================
+- Enhancement: Logback replaces Log4J
+- Workflow/History
+- ERefData

@@ -1,0 +1,482 @@
+<beans  
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- Datasource -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+     		<list>
+          		<value>classpath:database.properties</value>
+     		</list>
+   		</property>
+	</bean>
+	
+	<!-- Datasources -->
+	<!-- Postgresql Datasource
+	<bean id="mainDataSource" class="org.postgresql.jdbc2.optional.PoolingDataSource">
+		<property name="serverName" value="${db.serverName}" />
+		<property name="portNumber" value="${db.portNumber}" />
+   		<property name="databaseName" value="${db.database}" />
+   		<property name="initialConnections" value="${db.initConnection}" />
+   		<property name="maxConnections" value="${db.maxConnection}" />
+   		<property name="user" value="${db.userName}" />
+   		<property name="password" value="${db.Password}" />
+   </bean>
+   -->
+
+   <!-- Common Basic Datasource -->
+    <bean id="mainDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="username" value="${db.userName}" />
+		<property name="password" value="${db.password}" />
+		
+		<property name="url" value="jdbc:postgresql://${db.serverName}:${db.portNumber}/${db.database}"/>
+		<property name="driverClassName" value="org.postgresql.Driver"/>
+
+		<property name="testOnBorrow" value="true"/>
+		<property name="validationQuery" value="SELECT 1"/>
+		<!-- 
+		<property name="url" value="jdbc:log4jdbc:postgresql://${db.serverName}:${db.portNumber}/${db.database}"/>
+		<property name="driverClassName" value="net.sf.log4jdbc.DriverSpy"/>
+		 -->
+    </bean>
+   
+   <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="mainDataSource"/>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.nokor.efinance.core.marketing.model.Team</value>
+				<value>com.nokor.efinance.core.marketing.model.TeamEmployee</value>
+
+				<value>com.nokor.efinance.core.address.model.AddressArc</value>
+			    <value>com.nokor.efinance.core.address.model.Area</value>
+
+			    <value>com.nokor.efinance.core.aftersale.AfterSaleEvent</value>
+				<value>com.nokor.efinance.core.aftersale.AfterSaleEventFinProduct</value>
+				<value>com.nokor.efinance.core.aftersale.AfterSaleEventProductLine</value>
+			    
+			    <value>com.nokor.efinance.core.applicant.model.Applicant</value>
+			    <value>com.nokor.efinance.core.applicant.model.ApplicantArc</value>
+			    <value>com.nokor.efinance.core.applicant.model.ApplicantDocument</value>
+			    <value>com.nokor.efinance.core.applicant.model.ApplicantWkfHistory</value>
+			    <value>com.nokor.efinance.core.applicant.model.ApplicantWkfHistoryItem</value>
+			    <value>com.nokor.efinance.core.applicant.model.Company</value>
+				<value>com.nokor.efinance.core.applicant.model.CompanyAddress</value>
+				<value>com.nokor.efinance.core.applicant.model.CompanyContactInfo</value>
+				<value>com.nokor.efinance.core.applicant.model.CompanyEmployee</value>
+				<value>com.nokor.efinance.core.applicant.model.Driver</value>
+				<value>com.nokor.efinance.core.applicant.model.Employment</value>
+			    <value>com.nokor.efinance.core.applicant.model.EmploymentArc</value>
+			    <value>com.nokor.efinance.core.applicant.model.Individual</value>
+				<value>com.nokor.efinance.core.applicant.model.IndividualAddress</value>
+				<value>com.nokor.efinance.core.applicant.model.IndividualAddressArc</value>
+				<value>com.nokor.efinance.core.applicant.model.IndividualArc</value>
+				<value>com.nokor.efinance.core.applicant.model.IndividualContactInfo</value>
+				<value>com.nokor.efinance.core.applicant.model.IndividualContactInfoArc</value>
+				<value>com.nokor.efinance.core.applicant.model.IndividualReferenceContactInfo</value>
+				<value>com.nokor.efinance.core.applicant.model.IndividualReferenceContactInfoArc</value>
+				<value>com.nokor.efinance.core.applicant.model.IndividualReferenceInfo</value>
+				<value>com.nokor.efinance.core.applicant.model.IndividualReferenceInfoArc</value>
+				<value>com.nokor.efinance.core.applicant.model.IndividualSpouse</value>
+
+			    <value>com.nokor.efinance.core.asset.model.Asset</value>
+			    <value>com.nokor.efinance.core.asset.model.AssetArc</value>
+			    <value>com.nokor.efinance.core.asset.model.AssetCategory</value>
+			    <value>com.nokor.efinance.core.asset.model.AssetExteriorStatus</value>
+			    <value>com.nokor.efinance.core.asset.model.AssetMake</value>
+			    <value>com.nokor.efinance.core.asset.model.AssetModel</value>
+			    <value>com.nokor.efinance.core.asset.model.AssetRange</value>
+			    <value>com.nokor.efinance.core.asset.model.AssetPartsStatus</value>
+				<value>com.nokor.efinance.core.asset.model.AssetPlateNumber</value>
+				<value>com.nokor.efinance.core.asset.model.AssetRegistrationStatus</value>
+
+				<value>com.nokor.efinance.core.auction.model.Auction</value>
+				<value>com.nokor.efinance.core.auction.model.Buyer</value>
+				<value>com.nokor.efinance.core.auction.model.ContractAuctionData</value>
+
+			    <value>com.nokor.efinance.core.callcenter.model.CallCenterHistory</value>
+			    <value>com.nokor.efinance.core.callcenter.model.ECallCenterResult</value>
+
+				<value>com.nokor.efinance.core.actor.model.Actor</value>
+				<value>com.nokor.efinance.core.actor.model.ThirdParty</value>
+
+				<value>com.nokor.efinance.core.collection.model.ColActionType</value>
+				<value>com.nokor.efinance.core.collection.model.ColAssignment</value>
+				<value>com.nokor.efinance.core.collection.model.ColByPassRule</value>
+				<value>com.nokor.efinance.core.collection.model.ColCustField</value>
+				<value>com.nokor.efinance.core.collection.model.ColDebtLevel</value>
+				<value>com.nokor.efinance.core.collection.model.Collection</value>
+				<value>com.nokor.efinance.core.collection.model.CollectionAction</value>
+				<value>com.nokor.efinance.core.collection.model.CollectionAssist</value>
+				<value>com.nokor.efinance.core.collection.model.CollectionConfig</value>
+				<value>com.nokor.efinance.core.collection.model.CollectionFlag</value>
+				<value>com.nokor.efinance.core.collection.model.CollectionHistory</value>
+				<value>com.nokor.efinance.core.collection.model.CollectionWkfHistory</value>
+				<value>com.nokor.efinance.core.collection.model.CollectionWkfHistoryItem</value>
+				<value>com.nokor.efinance.core.collection.model.ContractCollectionHistory</value>
+				<value>com.nokor.efinance.core.collection.model.ContractFlag</value>
+				<value>com.nokor.efinance.core.collection.model.ContractOperation</value>
+				<value>com.nokor.efinance.core.collection.model.EColArea</value>
+				<value>com.nokor.efinance.core.collection.model.EColGroup</value>
+				<value>com.nokor.efinance.core.collection.model.EColResult</value>
+				<value>com.nokor.efinance.core.collection.model.EColStaffArea</value>
+				<value>com.nokor.efinance.core.collection.model.EColSubject</value>
+				<value>com.nokor.efinance.core.collection.model.EColTask</value>
+				<value>com.nokor.efinance.core.collection.model.EColTeam</value>
+				<value>com.nokor.efinance.core.collection.model.EColTeamDeptLevel</value>
+				<value>com.nokor.efinance.core.collection.model.EColTeamGroup</value>
+				<value>com.nokor.efinance.core.collection.model.EColWeight</value>
+				<value>com.nokor.efinance.core.collection.model.ELockSplitCashflowType</value>
+				<value>com.nokor.efinance.core.collection.model.ELockSplitType</value>
+				<value>com.nokor.efinance.core.collection.model.LockSplitRule</value>
+				<value>com.nokor.efinance.core.collection.model.LockSplitRuleItem</value>
+				<value>com.nokor.efinance.core.collection.model.Reminder</value>
+
+				<value>com.nokor.efinance.core.contract.model.Appointment</value>
+				<value>com.nokor.efinance.core.contract.model.Contract</value>
+				<value>com.nokor.efinance.core.contract.model.ContractApplicant</value>
+				<value>com.nokor.efinance.core.contract.model.ContractDocument</value>
+				<value>com.nokor.efinance.core.contract.model.ContractFinService</value>
+				<value>com.nokor.efinance.core.contract.model.ContractNote</value>
+				<value>com.nokor.efinance.core.contract.model.ContractRequest</value>
+				<value>com.nokor.efinance.core.contract.model.ContractSms</value>
+				<value>com.nokor.efinance.core.contract.model.ContractUserInbox</value>
+				<value>com.nokor.efinance.core.contract.model.ContractUserSimulInbox</value>
+				<value>com.nokor.efinance.core.contract.model.ContractWkfHistory</value>
+				<value>com.nokor.efinance.core.contract.model.ContractWkfHistoryItem</value>
+			    <value>com.nokor.efinance.core.contract.model.cashflow.Cashflow</value>
+				<value>com.nokor.efinance.core.contract.model.cashflow.CashflowLink</value>
+				<value>com.nokor.efinance.core.contract.model.ContractSimulation</value>
+				<value>com.nokor.efinance.core.contract.model.ContractSimulationApplicant</value>
+				<value>com.nokor.efinance.core.contract.model.ContractAdjustment</value>
+				<value>com.nokor.efinance.core.contract.model.ContractFinancialProduct</value>
+				<value>com.nokor.efinance.core.contract.model.ContractProfileQueue</value>
+				<value>com.nokor.efinance.core.contract.model.ContractRedemption</value>
+				<value>com.nokor.efinance.core.contract.model.LockSplit</value>
+			    <value>com.nokor.efinance.core.contract.model.LockSplitItem</value>
+			    <value>com.nokor.efinance.core.contract.model.LockSplitWkfHistory</value>
+			    <value>com.nokor.efinance.core.contract.model.LockSplitWkfHistoryItem</value>
+			    <value>com.nokor.efinance.core.contract.model.LockSplitItemWkfHistory</value>
+			    <value>com.nokor.efinance.core.contract.model.LockSplitItemWkfHistoryItem</value>
+			    <value>com.nokor.efinance.core.contract.model.SaleLostCutLost</value>
+			    <value>com.nokor.efinance.core.contract.model.ContractPromise</value>
+
+				<value>com.nokor.efinance.core.dealer.model.Dealer</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerAddress</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerAssetCategory</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerAssetMake</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerAssetModel</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerAttribute</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerBankAccount</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerContactInfo</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerEmployee</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerGroup</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerPaymentMethod</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerWkfHistory</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerWkfHistoryItem</value>
+				<value>com.nokor.efinance.core.dealer.model.LadderType</value>
+				<value>com.nokor.efinance.core.dealer.model.LadderTypeAttribute</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerAccountHolder</value>
+				<value>com.nokor.efinance.core.dealer.model.DealerEmployeeContactInfo</value><!---->
+
+				<value>com.nokor.efinance.core.document.model.Document</value>
+				<value>com.nokor.efinance.core.document.model.DocumentGroup</value>
+				<value>com.nokor.efinance.core.document.model.DocumentTemplate</value>
+				<value>com.nokor.efinance.core.document.model.DocumentUwGroup</value>
+				<value>com.nokor.efinance.core.document.model.DocumentConfirmEvidence</value>
+				<value>com.nokor.efinance.core.document.model.DocumentScoring</value>
+
+			    <value>com.nokor.efinance.core.financial.model.AssetMatrixPrice</value>
+			    <value>com.nokor.efinance.core.financial.model.Campaign</value>
+			    <value>com.nokor.efinance.core.financial.model.CampaignAssetCategory</value>
+			    <value>com.nokor.efinance.core.financial.model.CampaignAssetMake</value>
+			    <value>com.nokor.efinance.core.financial.model.CampaignAssetModel</value>
+			    <value>com.nokor.efinance.core.financial.model.CampaignAssetRange</value>
+			    <value>com.nokor.efinance.core.financial.model.CampaignCreditBureauGrade</value>
+			    <value>com.nokor.efinance.core.financial.model.CampaignDealer</value>
+			    <value>com.nokor.efinance.core.financial.model.CampaignDocument</value>
+			    <value>com.nokor.efinance.core.financial.model.CampaignTerm</value>
+			    <value>com.nokor.efinance.core.financial.model.CreditControl</value>
+			    <value>com.nokor.efinance.core.financial.model.CreditControlItem</value>
+			    <value>com.nokor.efinance.core.financial.model.CreditLine</value>
+			    <value>com.nokor.efinance.core.financial.model.FinProduct</value>
+			    <value>com.nokor.efinance.core.financial.model.FinProductService</value>
+			    <value>com.nokor.efinance.core.financial.model.InsuranceCampaign</value>
+			    <value>com.nokor.efinance.core.financial.model.InsuranceCampaignDealer</value>
+			    <value>com.nokor.efinance.core.financial.model.InsuranceFinService</value>
+			    <value>com.nokor.efinance.core.financial.model.InsuranceClaims</value>
+			    <value>com.nokor.efinance.core.financial.model.ManufacturerSubsidy</value>
+			    <value>com.nokor.efinance.core.financial.model.ManufacturerCompensation</value>
+			    <value>com.nokor.efinance.core.financial.model.MinimumInterest</value>
+			    <value>com.nokor.efinance.core.financial.model.ProductLine</value>
+			    <value>com.nokor.efinance.core.financial.model.FinService</value>
+			    <value>com.nokor.efinance.core.financial.model.Term</value>
+			    <value>com.nokor.efinance.core.financial.model.Vat</value>
+
+				<value>com.nokor.efinance.core.issue.model.ContractIssue</value>
+
+				<value>com.nokor.efinance.core.payment.model.EPaymentCondition</value>
+				<value>com.nokor.efinance.core.payment.model.EPaymentMethod</value>
+				<value>com.nokor.efinance.core.payment.model.Payment</value>
+				<value>com.nokor.efinance.core.payment.model.PaymentThirdParty</value>
+				<value>com.nokor.efinance.core.payment.model.PaymentThirdPartiesWkfHistory</value>
+				<value>com.nokor.efinance.core.payment.model.PaymentThirdPartiesWkfHistoryItem</value>
+				<value>com.nokor.efinance.core.payment.model.PaymentFile</value>
+				<value>com.nokor.efinance.core.payment.model.PaymentFileItem</value>
+				<value>com.nokor.efinance.core.payment.model.PaymentWkfHistory</value>
+				<value>com.nokor.efinance.core.payment.model.PaymentWkfHistoryItem</value>
+				<value>com.nokor.efinance.core.payment.model.PaymentFileWkfHistory</value>
+				<value>com.nokor.efinance.core.payment.model.PaymentFileWkfHistoryItem</value>
+				<value>com.nokor.efinance.core.payment.model.PaymentFileItemWkfHistory</value>
+				<value>com.nokor.efinance.core.payment.model.PaymentFileItemWkfHistoryItem</value>
+				<value>com.nokor.efinance.core.payment.model.PenaltyRule</value>
+				<value>com.nokor.efinance.core.payment.model.BankDeposit</value>
+
+				<value>com.nokor.efinance.core.quotation.model.Comment</value>
+				<value>com.nokor.efinance.core.quotation.model.Quotation</value>
+				<value>com.nokor.efinance.core.quotation.model.QuotationApplicant</value>
+				<value>com.nokor.efinance.core.quotation.model.QuotationDocument</value>
+				<value>com.nokor.efinance.core.quotation.model.QuotationExtModule</value>
+				<value>com.nokor.efinance.core.quotation.model.QuotationService</value>
+				<value>com.nokor.efinance.core.quotation.model.QuotationSupportDecision</value>
+				<value>com.nokor.efinance.core.quotation.model.SupportDecision</value>
+				<value>com.nokor.efinance.core.quotation.model.QuotationWkfHistory</value>
+				<value>com.nokor.efinance.core.quotation.model.QuotationWkfHistoryItem</value>
+				
+				<value>com.nokor.efinance.core.organization.model.OrgPaymentMethod</value>
+
+				<value>com.nokor.efinance.core.scoring.ScoreCard</value>
+				<value>com.nokor.efinance.core.scoring.ScoreGroup</value>
+				<value>com.nokor.efinance.core.scoring.RiskSegment</value>
+
+				<value>com.nokor.efinance.core.common.security.model.SecUserDeptLevel</value>
+				<value>com.nokor.efinance.core.common.security.model.SecUserDetail</value>
+
+				<value>com.nokor.efinance.core.history.FinHistory</value>
+				<value>com.nokor.efinance.core.history.FinHistoryType</value>
+				
+				<value>com.nokor.efinance.core.stock.model.EStockReason</value>
+
+				<value>com.nokor.efinance.core.workflow.model.history.HistoryProcess</value>
+
+				<value>com.nokor.efinance.core.common.reference.model.BlackListItem</value>
+				<value>com.nokor.efinance.core.common.reference.model.ExchangeRate</value>
+				<value>com.nokor.efinance.core.common.reference.model.IncidentLocation</value>
+				<value>com.nokor.efinance.core.common.reference.model.ELetterTemplate</value>
+				<value>com.nokor.efinance.core.common.reference.model.MinReturnRate</value>
+				<value>com.nokor.efinance.core.common.reference.model.PoliceStation</value>
+				<value>com.nokor.efinance.core.common.reference.model.ESmsTemplate</value>
+				<value>com.nokor.efinance.core.common.reference.model.EmailTemplate</value>
+
+				<value>com.nokor.ersys.core.finance.model.eref.ECurrency</value>
+
+				<value>com.nokor.common.app.content.model.file.FileData</value>
+
+				<value>com.nokor.common.app.menu.model.MenuEntity</value>
+				<value>com.nokor.common.app.menu.model.MenuItemEntity</value>
+
+				<value>com.nokor.common.app.scheduler.model.ScFrequency</value>
+				<value>com.nokor.common.app.scheduler.model.ScTask</value>
+				<value>com.nokor.common.app.scheduler.model.ScTriggerTask</value>
+
+				<value>com.nokor.ersys.core.hr.model.address.Address</value>
+			    <value>com.nokor.ersys.core.hr.model.address.Commune</value>
+			    <value>com.nokor.ersys.core.hr.model.address.District</value>
+			    <value>com.nokor.ersys.core.hr.model.address.Province</value>
+			    <value>com.nokor.ersys.core.hr.model.address.Village</value>
+			    <value>com.nokor.ersys.core.hr.model.address.Zone</value>
+
+				<value>com.nokor.ersys.core.hr.model.organization.ContactInfo</value>
+				<value>com.nokor.ersys.core.hr.model.organization.Employee</value>
+				<value>com.nokor.ersys.core.hr.model.organization.EmployeeWkfHistory</value>
+				<value>com.nokor.ersys.core.hr.model.organization.EmployeeWkfHistoryItem</value>
+				<value>com.nokor.ersys.core.hr.model.organization.EmployeeWkfTempItem</value>
+				<value>com.nokor.ersys.core.hr.model.organization.OrgAddress</value>
+				<value>com.nokor.ersys.core.hr.model.organization.Organization</value>
+				<value>com.nokor.ersys.core.hr.model.organization.OrganizationWkfHistory</value>
+				<value>com.nokor.ersys.core.hr.model.organization.OrganizationWkfHistoryItem</value>
+				<value>com.nokor.ersys.core.hr.model.organization.OrgBankAccount</value>
+				<value>com.nokor.ersys.core.hr.model.organization.OrgAccountHolder</value>
+				<value>com.nokor.ersys.core.hr.model.organization.OrgGroup</value>
+				<value>com.nokor.ersys.core.hr.model.organization.OrgStructure</value>
+
+				<value>com.nokor.ersys.core.hr.model.eref.EPostalCode</value>
+				<value>com.nokor.ersys.core.hr.model.eref.ESeniorityLevel</value>
+
+				<value>com.nokor.ersys.core.partner.model.PartnerWkfHistory</value>
+				<value>com.nokor.ersys.core.partner.model.PartnerWkfHistoryItem</value>
+				<value>com.nokor.ersys.core.partner.model.Partner</value>
+				<value>com.nokor.ersys.core.partner.model.PartnerAddress</value>
+				<value>com.nokor.ersys.core.partner.model.PartnerBankAccount</value>
+				<value>com.nokor.ersys.core.partner.model.PartnerContactInfo</value>
+				<value>com.nokor.ersys.core.partner.model.PartnerEmployee</value>
+
+				<value>com.nokor.ersys.core.finance.model.Bank</value>
+				<value>com.nokor.ersys.core.finance.model.BankAccount</value>
+
+				<value>com.nokor.ersys.finance.accounting.model.AccountLedger</value>
+			    <value>com.nokor.ersys.finance.accounting.model.JournalEntry</value>
+			    <value>com.nokor.ersys.finance.accounting.model.Account</value>
+			    <value>com.nokor.ersys.finance.accounting.model.AccountCategory</value>
+			    <value>com.nokor.ersys.finance.accounting.model.OrganizationCategory</value>
+			    <value>com.nokor.ersys.finance.accounting.model.Journal</value>
+			    <value>com.nokor.ersys.finance.accounting.model.JournalEvent</value>
+			    <value>com.nokor.ersys.finance.accounting.model.JournalEventAccount</value>
+			    <value>com.nokor.ersys.finance.accounting.model.TransactionEntry</value>
+			           
+			    <value>com.nokor.ersys.finance.accounting.workflow.TransactionEntryWkfHistory</value>
+			    <value>com.nokor.ersys.finance.accounting.workflow.TransactionEntryWkfHistoryItem</value>
+
+				<value>com.nokor.ersys.collab.project.model.Project</value>
+				<value>com.nokor.ersys.collab.project.model.ProjectAssignee</value>
+				<value>com.nokor.ersys.collab.project.model.ProjectDependency</value>
+				<value>com.nokor.ersys.collab.project.model.Task</value>
+				<value>com.nokor.ersys.collab.project.model.TaskAttachment</value>
+				<value>com.nokor.ersys.collab.project.model.TaskDependency</value>
+				<value>com.nokor.ersys.collab.project.model.TaskRecipient</value>
+				<value>com.nokor.ersys.collab.project.model.TaskTemplateRecipient</value>
+				<value>com.nokor.ersys.collab.project.model.TaskWkfHistory</value>
+				<value>com.nokor.ersys.collab.project.model.TaskWkfHistoryItem</value>
+				<value>com.nokor.ersys.collab.project.model.TaskClassification</value>
+				<value>com.nokor.ersys.collab.project.model.TaskEmployeeConfig</value>
+				<value>com.nokor.ersys.collab.project.model.TaskTemplate</value>
+				
+				<value>com.nokor.common.app.action.model.ActionExecution</value>
+			    <value>com.nokor.common.app.action.model.ActionDefinition</value>
+
+				<value>com.nokor.common.app.eventlog.model.SecEventLog</value>
+				<value>com.nokor.common.app.eventlog.model.SecEventAction</value>
+
+				<value>com.nokor.common.app.workflow.model.WkfHistory</value>
+				<value>com.nokor.common.app.workflow.model.WkfHistoryItem</value>
+				<value>com.nokor.common.app.workflow.model.WkfTempItem</value>
+				<value>com.nokor.common.app.workflow.model.EWkfStatus</value>
+				<value>com.nokor.common.app.workflow.model.WkfHistoConfig</value>
+				<value>com.nokor.common.app.workflow.model.EWkfFlow</value>
+				<value>com.nokor.common.app.workflow.model.WkfFlowControl</value>
+				<value>com.nokor.common.app.workflow.model.WkfFlowItem</value>
+				<value>com.nokor.common.app.workflow.model.WkfFlowProfile</value>
+				<value>com.nokor.common.app.workflow.model.WkfFlowStatus</value>
+
+				<value>com.nokor.common.app.history.model.History</value>
+				<value>com.nokor.common.app.history.model.EHistoReason</value>
+
+				<value>com.nokor.common.app.systools.model.SysVersion</value>
+				<value>com.nokor.common.app.systools.model.SysTask</value>
+
+				<value>org.seuksa.frmk.model.entity.EMainEntity</value>
+
+				<value>com.nokor.frmk.config.model.RefData</value>
+				<value>com.nokor.frmk.config.model.RefTable</value>
+				<value>com.nokor.frmk.config.model.RefTopic</value>
+				<value>com.nokor.frmk.config.model.SettingConfig</value>
+
+				<value>com.nokor.frmk.security.model.ESecAction</value>
+				<value>com.nokor.frmk.security.model.SecApplication</value>
+				<value>com.nokor.frmk.security.model.ESecForm</value>
+				<value>com.nokor.frmk.security.model.ESecOther</value>
+				<value>com.nokor.frmk.security.model.ESecPrivilege</value>
+				<value>com.nokor.frmk.security.model.SecControl</value>
+				<value>com.nokor.frmk.security.model.SecControlPrivilege</value>
+				<value>com.nokor.frmk.security.model.SecControlProfilePrivilege</value>
+				<value>com.nokor.frmk.security.model.SecManagedProfile</value>
+				<value>com.nokor.frmk.security.model.SecPage</value>
+				<value>com.nokor.frmk.security.model.SecProfile</value>
+				<value>com.nokor.frmk.security.model.SecUser</value>
+			</list>
+		</property>
+		<property name="configLocation" value="classpath:hibernate.cfg.xml"/>
+		<property name="entityInterceptor" ref="interceptorChain" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">${db.hibernate.showsql}</prop>
+				
+				<!-- envers config: see http://docs.jboss.org/hibernate/core/4.1/devguide/en-US/html/ch15.html#d5e3889 -->
+				<prop key="hibernate.envers.autoRegisterListeners">${db.hibernate.envers.autoregister}</prop>
+				<prop key="org.hibernate.envers.audit_table_prefix">_env_</prop> 
+				<!--<prop key="org.hibernate.envers.audit_table_suffix">_</prop>
+				<prop key="org.hibernate.envers.revision_field_name">env_rev</prop> 
+				<prop key="org.hibernate.envers.revision_type_field_name">env_rev_type</prop> 
+				<prop key="org.hibernate.envers.do_not_audit_optimistic_locking_field">true</prop> 
+				-->
+				<!--
+				<prop key="org.hibernate.envers.revision_on_collection_change">true</prop> 
+				<prop key="org.hibernate.envers.store_data_at_delete">false</prop>
+				<prop key="org.hibernate.envers.default_schema">null</prop>
+				<prop key="org.hibernate.envers.audit_strategy">org.hibernate.envers.strategy.ValidityAuditStrategy</prop> 
+				<prop key="org.hibernate.envers.audit_strategy_validity_end_rev_field_name">env_rev_end</prop> 
+				<prop key="org.hibernate.envers.audit_strategy_validity_store_revend_timestamp">true</prop> 
+				<prop key="org.hibernate.envers.audit_strategy_validity_revend_timestamp_field_name">env_rev_timestamp</prop>
+				-->
+
+				<prop key="org.hibernate.envers.global_with_modified_flag">true</prop>
+				<prop key="org.hibernate.envers.modified_flag_suffix">env_mod</prop>
+				<!--<prop key="org.hibernate.envers.track_entities_changed_in_revision ">true</prop>-->
+				<!--
+				<prop key="org.hibernate.envers.global_with_modified_flag">true</prop>
+				<prop key="org.hibernate.envers.modified_flag_suffix">env_mod</prop>
+				<prop key="org.hibernate.envers.track_entities_changed_in_revision ">true</prop>
+				-->
+				
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="interceptorChain" class="com.nokor.frmk.interceptor.InterceptorChain">
+		<property name="interceptors">
+			<list>
+				<bean class="com.nokor.frmk.auditlog.InfoSysAuditableInterceptor" />
+				<bean class="com.nokor.common.app.workflow.WorkflowInterceptor" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- Spring/Hibernate Transaction Management          -->
+	<!-- . Either via Spring/Hibernate TransactionManager -->
+	<!-- . Either via JPA TransactionManager              -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!-- Spring/Hibernate TransactionManager -->
+ 	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="dataSource" ref="mainDataSource" />
+	</bean>
+
+	<!-- the transactional advice  -->
+    <tx:advice id="defaultTxAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="get*" propagation="SUPPORTS" isolation="DEFAULT" read-only="true"/>
+            <tx:method name="find*" propagation="SUPPORTS" isolation="DEFAULT" read-only="true"/>
+            <tx:method name="list*" propagation="SUPPORTS" isolation="DEFAULT" read-only="true"/>
+            <tx:method name="is*" propagation="SUPPORTS" isolation="DEFAULT" read-only="true"/>
+            <tx:method name="check*" propagation="SUPPORTS" isolation="DEFAULT" read-only="true"/>
+            <tx:method name="add*" propagation="REQUIRED" isolation="DEFAULT" read-only="false"/>
+            <tx:method name="update*" propagation="REQUIRED" isolation="DEFAULT" read-only="false"/>
+            <tx:method name="save*" propagation="REQUIRED" isolation="DEFAULT" read-only="false"/>
+            <tx:method name="delete*" propagation="REQUIRED" isolation="DEFAULT" read-only="false"/>
+            <tx:method name="remove*" propagation="REQUIRED" isolation="DEFAULT" read-only="false"/>
+            <tx:method name="change*" propagation="REQUIRED" isolation="DEFAULT" read-only="false"/>
+            <tx:method name="modify*" propagation="REQUIRED" isolation="DEFAULT" read-only="false"/>
+            <tx:method name="*" propagation="REQUIRED" rollback-for="Exception"/>
+        </tx:attributes>
+    </tx:advice>
+
+	<aop:config>
+        <aop:pointcut id="nokorServicesConfig"
+                expression="execution(* com.nokor..service.*Service.*(..))"/>
+                
+        <aop:pointcut id="seuksaServicesConfig"
+                expression="execution(* org.seuksa.frmk.service.*Service.*(..))"/>
+
+        <aop:advisor pointcut-ref="nokorServicesConfig" advice-ref="defaultTxAdvice"/>
+        <aop:advisor pointcut-ref="seuksaServicesConfig" advice-ref="defaultTxAdvice"/>
+    </aop:config>
+	
+</beans>

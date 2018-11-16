@@ -1,0 +1,182 @@
+.v-tabsheet-spacertd {
+    background: inherit;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.v-tabsheet-tabitem, .v-tabsheet-spacertd div {
+	background: inherit;
+    text-shadow: 0 0 0 #FFFFFF;
+    padding: 0;
+}
+
+.v-tabsheet-scroller {
+    background: inherit;
+}
+
+.v-tabsheet-tabitemcell {
+    background: inherit;
+    padding-left: 0;
+}
+
+.v-tabsheet-tabitemcell-first {
+    background-image: inherit;
+    background-position: inherit;
+    /*padding-left: 6px;*/
+}
+
+.v-tabsheet-tabitemcell-selected-first {
+    background-image: inherit;
+    background-position: inherit;
+}
+
+.v-tabsheet-tabitemcell-selected {
+    padding-left: 0;
+}
+
+.v-tabsheet-tabitemcell-selected:first-child {
+    /*padding-left: 6px;*/
+}
+
+.v-tabsheet-tabitem-selected {
+    background-image: inherit;
+    background-position: inherit;
+}
+
+.v-tabsheet-tabitem .v-captiontext {
+    color: #575757;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.v-tabsheet-tabitem .v-disabled .v-captiontext {
+    color: #C8BBB9;
+}
+
+.v-tabsheet-tabitem-selected .v-captiontext {
+    color: #153E8A !important;
+    font-style: normal;
+}
+
+.v-tabsheet-tabitem .v-caption {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #B1B1B1;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 23px;
+    min-width: 50px;
+    padding-top: 7px;
+    text-align: center;
+}
+
+.v-tabsheet-tabitem-selected .v-caption {
+    background-color: #E7F0FE;
+    background-image: -moz-linear-gradient(center bottom , #F4F7FB 0%, #F4F7FB 2%, #E7F0FE 2%, #CDDDF4 100%);
+    background-image: -webkit-linear-gradient(bottom, #f4f7fb 0%, #f4f7fb 2%, #e7f0fe 2%, #cdddf4 100%);
+    background-repeat: repeat-x;
+    background-size: 100% auto;
+    
+    border-color: #B1B1B1;
+    border-style: solid solid none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-width: 1px 1px 0;
+    height: 24px;
+}
+
+/*---------STYLE ACTION PANEL---------*/
+
+.main-link-button .v-button-link {
+	margin-right: 35px;
+}
+.main-link-button .v-button-link .v-button-caption {
+	color: #3B5998 !important;
+	text-decoration: none;
+	border: 1px solid rgba(255, 25, 255, 0);
+	padding: 3px 7px;
+	display: block;
+}
+.main-link-button .v-button-disabled .v-button-caption {
+	background-color: #E7F0FE;
+    background-image: -moz-linear-gradient(center bottom , #F4F7FB 0%, #F4F7FB 2%, #E7F0FE 2%, #CDDDF4 100%);
+    background-repeat: repeat-x;
+    border-radius: 3px;
+    border: 1px solid #BBBBBB;
+    color: #3B5998 ;
+    padding: 3px 7px;
+    display: block;
+}
+.main-link-button .v-button-link .v-button-caption:hover {
+    border: 1px solid #BBBBBB;
+	border-radius: 3px;
+}
+.v-button-link:focus .v-button-caption {
+	outline: none;
+}
+
+.v-panel-content.v-panel-content-group-panel {
+    margin-top: 5px;
+}
+
+/*---------STYLE INFO GROUP PANEL---------*/
+
+.v-slot-group-panel .v-panel-content {
+	border: 0 none;
+}
+.v-slot-group-panel .v-panel-caption {
+	 border-bottom: 1px solid #cacaca;
+}
+.v-slot-group-panel .v-panel-caption span,
+.v-slot-group-panel .v-panel-caption div {
+	font-size: 13px;
+	color: #3b5998;
+    margin-left: 5px;
+	display: block;
+}
+.v-panel-deco-group-panel {
+    border: 0 none;
+    height: 0;
+}
+
+.v-slot-img-edit .v-button,
+.v-button-img-remove {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	text-align: center;
+}
+.v-slot-img-edit .v-disabled.v-button,
+.v-disabled.v-button.v-button-img-remove {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	
+}	
+.v-slot-img-edit .v-button-wrap,
+.v-button-img-remove .v-button-wrap {
+    background: #e7f0fe none repeat scroll 0 0;
+    border: 1px solid #bbbbbb;
+    border-radius: 3px;
+    height: 18px;
+    padding: 2px 7px 0;
+    
+}
+.v-slot-img-edit .v-disabled.v-button .v-button-wrap,
+.v-disabled.v-button.v-button-img-remove .v-button-wrap {
+    background: #eee none repeat scroll 0 0;
+    border: 1px solid #bbbbbb;
+    border-radius: 3px;
+    height: 18px;
+    padding: 2px 7px 0;
+}
+
+.v-slot-img-edit .v-button:active, .v-button-img-remove.v-button.v-pressed,
+.v-slot-img-edit .v-button:focus, .v-button-img-remove.v-button:focus {
+	background: none;
+}
+.v-slot-img-edit .v-button:focus .v-button-wrap, .v-button-img-remove.v-button:focus .v-button-wrap {
+	background: #fff;
+}
+
+.v-panel-content, .white .v-panel-content {
+	background: none;
+}
+
+.v-panel-emp-detail-group-button {
+    background: #f5f5f5;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<score>
+		<consistence>
+			<installment factor="0.15" />
+			<monthly_income factor="0.15" />
+			<length_of_service factor="0.20" />
+		</consistence>
+		<liability>
+			<gross_income_ratio maxred="1.3" maxorange="2.0" />
+			<uw_estimation_ratio maxred="1.3" maxorange="2.0" />
+			<cbc_info_ratio maxred="1.3" maxorange="2.0" />
+		</liability>
+	</score>
+</configuration>
